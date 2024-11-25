@@ -1,2 +1,2 @@
 # CMEPDA_project
-Assignments of the Computing Methods Course
+This repository contains the code for the simulation of a detector with GEANT4, made for the CMEPDA exam.
