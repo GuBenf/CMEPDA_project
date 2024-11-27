@@ -2,7 +2,7 @@
 
 MyPrimaryGenerator::MyPrimaryGenerator()
 {
-  fParticleGun = new G4ParticleGun(10);
+  fParticleGun = new G4ParticleGun(1);
   //fParticleSource = new G4GeneralParticleSource();
 }
 MyPrimaryGenerator::~MyPrimaryGenerator()
@@ -11,14 +11,16 @@ MyPrimaryGenerator::~MyPrimaryGenerator()
   //delete fParticleSource;
 }
 
+G4double randomMaker(){
+    return CLHEP::HepRandom::getTheEngine()->flat();
+}
+
 void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
 {
   G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
   G4String particleName = "muon";
   G4ParticleDefinition *particle = particleTable->FindParticle("mu+");
   fParticleGun->SetParticleDefinition(particle);
-  
-  G4ThreeVector mom(0., -1., 0.);
 
   // Generate a random position on a plane (e.g., square plane)
   G4double randomValue1 = CLHEP::HepRandom::getTheEngine()->flat();
@@ -31,12 +33,13 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
   G4ThreeVector pos(x, y, z);
 
   // Generate a cosine-like angular distribution
-  //G4double theta = std::acos(std::sqrt(G4UniformRand())); // Cosine distribution
-  //G4double phi = 2. * CLHEP::pi * G4UniformRand();        // Uniform in [0, 2π]
-  //G4double px = std::sin(theta) * std::cos(phi);
-  //G4double py = std::sin(theta) * std::sin(phi);
-  //G4double pz = std::cos(theta);
-  //particleGun->SetParticleMomentumDirection(G4ThreeVector(px, py, pz));
+  G4double cosTheta = -G4UniformRand();
+  G4double theta = std::acos(cosTheta);
+  G4double phi = 2. * CLHEP::pi * G4UniformRand();        // Uniform in [0, 2π]
+  G4double px = std::sin(theta) * std::cos(phi);
+  G4double pz = std::sin(theta) * std::sin(phi);
+  G4double py = std::cos(theta);
+  G4ThreeVector mom(px, py, pz);
 
   fParticleGun->SetParticlePosition(pos);
   fParticleGun->SetParticleMomentumDirection(mom);
