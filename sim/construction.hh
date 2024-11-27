@@ -6,17 +6,24 @@
 #include "G4VPhysicalVolume.hh"
 #include "G4LogicalVolume.hh"
 #include "G4Box.hh"
+#include "G4Trd.hh"
 #include "G4PVPlacement.hh"
 #include "G4NistManager.hh"
+
+#include "detector.hh"
+
 
 
 class MyDetectorConstruction : public G4VUserDetectorConstruction
 {
 public:
-  MyDetectorConstruction(); //the constructor
-  ~MyDetectorConstruction(); //the destructor
+  MyDetectorConstruction();
+  ~MyDetectorConstruction();
 
-  virtual G4VPhysicalVolume *Construct(); //main function that construct the whole detector geometry
+  virtual G4VPhysicalVolume *Construct();
+private:
+  G4LogicalVolume *logicDetector;
+  virtual void ConstructSDandField();
 };
 
 #endif
