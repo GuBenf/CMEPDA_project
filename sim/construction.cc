@@ -15,7 +15,7 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
 
   // Define the material for the scintillator
   // ...
-  G4Material *scint_material = nist->FindOrBuildMaterial("G4_Pb");
+  G4Material *scint_material = nist->FindOrBuildMaterial("G4_POLYSTYRENE");
 
 
 
