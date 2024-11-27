@@ -5,6 +5,9 @@
 #include "G4ParticleGun.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4ParticleTable.hh"
+#include "G4GeneralParticleSource.hh"
+#include "globals.hh"
+#include "G4RandomTools.hh"
 
 class MyPrimaryGenerator : public G4VUserPrimaryGeneratorAction
 {
@@ -16,6 +19,7 @@ public:
 
 private:
   G4ParticleGun *fParticleGun;
+  G4GeneralParticleSource *fParticleSource;
 };
 
 #endif
