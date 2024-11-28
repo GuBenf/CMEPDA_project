@@ -17,6 +17,23 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
   // ...
   G4Material *scint_material = nist->FindOrBuildMaterial("G4_POLYSTYRENE");
 
+  G4MaterialPropertiesTable *mptScint = new G4MaterialPropertiesTable();
+  G4double energy[2] = {1.95*eV, 1.95*eV};
+  G4double rindex[2] = {1.587, 1.587};
+  G4double fraction[2] = {1.0, 1.0};
+
+  mptScint->AddProperty("RINDEX", energy, rindex, 2);
+  mptScint->AddProperty("SCINTILLATIONCOMPONENT1", energy, fraction, 2);
+  mptScint->AddConstProperty("SCINTILLATIONYIELD", 10000./MeV);
+  mptScint->AddConstProperty("RESOLUTIONSCALE", 1.); //sigma of the distribution
+  
+  mptScint->AddConstProperty("SCINTILLATIONTIMECONSTANT1",2. * ns);
+  //mptScint->AddConstProperty("YIELDRATIO", 1); 
+
+  
+
+  scint_material->SetMaterialPropertiesTable(mptScint);
+
 
 
   // Define the world material
