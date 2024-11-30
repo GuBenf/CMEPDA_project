@@ -32,7 +32,12 @@ int main(int argc, char** argv)
   UImanager->ApplyCommand("/vis/drawVolume");
   UImanager->ApplyCommand("/vis/viewer/set/autoRefresh true");
   UImanager->ApplyCommand("/vis/scene/add/trajectories smooth");
-  UImanager->ApplyCommand("/vis/scene/endOfEventAction accumulate");
+  UImanager->ApplyCommand("/vis/scene/endOfEventAction accumulate 1000");
+  //UImanager->ApplyCommand("/run/verbose 2");
+  //UImanager->ApplyCommand("/tracking/verbose 2");
+  UImanager->ApplyCommand("/optics/verbose 2");
+  UImanager->ApplyCommand("/geometry/test/run");
+  UImanager->ApplyCommand("/run/beamOn 100");
 
 
   ui->SessionStart();

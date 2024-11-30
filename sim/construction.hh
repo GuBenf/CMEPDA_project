@@ -9,6 +9,11 @@
 #include "G4Trd.hh"
 #include "G4PVPlacement.hh"
 #include "G4NistManager.hh"
+#include "G4OpticalSurface.hh"
+#include "G4LogicalSkinSurface.hh"
+#include "G4UserLimits.hh"
+#include "G4OpBoundaryProcess.hh"
+#include "G4LogicalBorderSurface.hh"
 
 #include "detector.hh"
 
