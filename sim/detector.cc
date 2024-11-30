@@ -27,13 +27,45 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
 
   G4cout<< "Detector Position: " << posDetector << G4endl;
 
+  G4int det_1;
+  G4int det_2;
+  G4int det_3;
+  if(posDetector[1] <= 10.+0.5)
+    {
+      if(posDetector[1] >= 10.-0.5)
+	{
+	  det_1 = 1;
+	  det_2 = 0;
+	  det_3 = 0;
+	}
+    }
+  else if(posDetector[1] <= 20.+0.5)
+    {
+      if(posDetector[1] >= 20.-0.5)
+	{
+	  det_1 = 0;
+	  det_2 = 1;
+	  det_3 = 0;
+	}
+    }
+  else if(posDetector[1] <=  30.+0.5)
+    {
+      if(posDetector[1] >=30.-0.5)
+	{
+          det_1 = 0;
+          det_2 = 0;
+          det_3 = 1;
+	}
+    }
+
+  G4cout<< det_1 << " " << det_2 << " " << det_3 << G4endl;
   G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
   
   G4AnalysisManager *man = G4AnalysisManager::Instance();
   man->FillNtupleIColumn(0,evt);
-  man->FillNtupleDColumn(1,posDetector[0]);
-  man->FillNtupleDColumn(2,posDetector[1]);
-  man->FillNtupleDColumn(3,posDetector[2]);
+  man->FillNtupleIColumn(1,det_1);
+  man->FillNtupleIColumn(2,det_2);
+  man->FillNtupleIColumn(3,det_3);
   man->AddNtupleRow(0);
   
 }

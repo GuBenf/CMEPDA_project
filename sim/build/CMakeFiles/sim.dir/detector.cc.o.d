@@ -1,10 +1,9 @@
-CMakeFiles/sim.dir/construction.cc.o: \
- /home/guglibenfri/CMEPDA_project/sim/construction.cc \
+CMakeFiles/sim.dir/detector.cc.o: \
+ /home/guglibenfri/CMEPDA_project/sim/detector.cc \
  /usr/include/stdc-predef.h \
- /home/guglibenfri/CMEPDA_project/sim/construction.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4SystemOfUnits.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VUserDetectorConstruction.hh \
+ /home/guglibenfri/CMEPDA_project/sim/detector.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VSensitiveDetector.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4CollectionNameVector.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/globals.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4ios.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Types.hh \
@@ -237,13 +236,19 @@ CMakeFiles/sim.dir/construction.cc.o: \
  /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VPhysicalVolume.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/geomdefs.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4RotationMatrix.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4HCofThisEvent.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Allocator.hh \
+ /usr/include/c++/11/cstddef \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4AllocatorPool.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VHitsCollection.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Step.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4ThreeVector.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Vector/ThreeVector.h \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Utility/defs.h \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VPhysicalVolume.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/geomdefs.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4RotationMatrix.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Vector/Rotation.h \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Vector/RotationInterfaces.h \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Vector/LorentzVector.h \
@@ -254,6 +259,7 @@ CMakeFiles/sim.dir/construction.cc.o: \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Vector/RotationX.h \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Vector/RotationX.icc \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Units/PhysicalConstants.h \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Vector/RotationY.h \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Vector/RotationY.icc \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Vector/RotationZ.h \
@@ -274,6 +280,29 @@ CMakeFiles/sim.dir/construction.cc.o: \
  /usr/include/c++/11/bits/std_thread.h /usr/include/c++/11/thread \
  /usr/include/c++/11/bits/this_thread_sleep.h \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VPhysicalVolume.icc \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4StepPoint.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4SteppingControl.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4StepStatus.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4TouchableHandle.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VTouchable.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4TouchableHistory.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationHistory.hh \
+ /usr/include/assert.h \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4AffineTransform.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Transform3D.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Geometry/Transform3D.h \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Geometry/Point3D.h \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Geometry/Vector3D.h \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Geometry/Normal3D.h \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4AffineTransform.icc \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationLevel.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationLevelRep.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationLevelRep.icc \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationLevel.icc \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationHistoryPool.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationHistory.icc \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4LogicalVolume.hh \
  /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
@@ -283,36 +312,9 @@ CMakeFiles/sim.dir/construction.cc.o: \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Region.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Region.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VPhysicalVolume.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4LogicalVolume.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Box.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4GeomTypes.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4GeomConfig.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4CSGSolid.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VSolid.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VSolid.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Polyhedron.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/HepPolyhedron.h \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4TwoVector.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Vector/TwoVector.h \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Vector/TwoVector.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Point3D.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Geometry/Point3D.h \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Normal3D.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Geometry/Normal3D.h \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Transform3D.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Geometry/Transform3D.h \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/CLHEP/Geometry/Vector3D.h \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Visible.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Visible.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Box.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Trd.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Trd.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4PVPlacement.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NistManager.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4ICRU90StoppingData.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4TouchableHistory.icc \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4ReferenceCountedHandle.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Material.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Element.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4ElementTable.hh \
@@ -339,38 +341,6 @@ CMakeFiles/sim.dir/construction.cc.o: \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4OrderedTable.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4DataVector.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4DataVector.icc \
- /usr/include/assert.h \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NistElementBuilder.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NistMaterialBuilder.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Pow.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Exp.hh \
- /home/guglibenfri/CMEPDA_project/sim/detector.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VSensitiveDetector.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4CollectionNameVector.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4HCofThisEvent.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Allocator.hh \
- /usr/include/c++/11/cstddef \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4AllocatorPool.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VHitsCollection.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Step.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4StepPoint.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4SteppingControl.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4StepStatus.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4TouchableHandle.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VTouchable.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4TouchableHistory.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationHistory.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4AffineTransform.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4AffineTransform.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationLevel.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationLevelRep.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationLevelRep.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationLevel.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationHistoryPool.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NavigationHistory.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4LogicalVolume.hh \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4TouchableHistory.icc \
- /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4ReferenceCountedHandle.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4StepPoint.icc \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4TrackVector.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Profiler.hh \
@@ -429,6 +399,8 @@ CMakeFiles/sim.dir/construction.cc.o: \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4Navigator.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NormalNavigation.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VNavigation.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VSolid.hh \
+ /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4VSolid.icc \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4AuxiliaryNavServices.hh \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4AuxiliaryNavServices.icc \
  /home/guglibenfri/pippo/geant4-v11.2.2.install/include/Geant4/G4NormalNavigation.icc \
