@@ -1,4 +1,4 @@
-#ifndef CONSTRUCTION_HH
+#ifndef CONSTRUCTION_HH#ifndef CONSTRUCTION_HH
 #define CONSTRUCTION_HH
 
 #include "G4SystemOfUnits.hh"
@@ -26,9 +26,33 @@ public:
   ~MyDetectorConstruction();
 
   virtual G4VPhysicalVolume *Construct();
+  virtual std::tuple<G4VPhysicalVolume *, G4VPhysicalVolume *, G4VPhysicalVolume *> DetectorLayer(G4double posX, G4double posY, G4double posZ, G4LogicalVolume *logicWorld, G4int index);
+
 private:
   G4LogicalVolume *logicDetector;
   virtual void ConstructSDandField();
+  G4NistManager *nist = G4NistManager::Instance();
+
+  G4double energy[2] = {1.95*eV, 1.95*eV};
+
+  //Scintillators dimensions
+  G4double det_x = 20.*cm;
+  G4double det_y = 0.5*cm;
+  G4double det_z = 24*cm;
+
+  //Waveguides dimensions
+  G4double d_x1 = 20.*cm;
+  G4double d_x2 = 0.5*cm;
+  G4double d_y1 = det_y;
+  G4double d_y2 = det_y;
+  G4double d_z = 10*cm;
+
+  //PMTs dimensions
+  G4double pmt_x = d_x2; //needed to couple with waveguide
+  G4double pmt_y = d_y2; //needed to couple with waveguide
+  G4double pmt_z = 1.*cm;
+
+  G4int nDetectors = 6;
 };
 
 #endif
