@@ -9,6 +9,9 @@ MyRunAction::MyRunAction()
   man->CreateNtupleIColumn("PMT1");
   man->CreateNtupleIColumn("PMT2");
   man->CreateNtupleIColumn("PMT3");
+  man->CreateNtupleIColumn("PMT4");
+  man->CreateNtupleIColumn("PMT5");
+  man->CreateNtupleIColumn("PMT6");
   man->FinishNtuple(0);
 }
 
