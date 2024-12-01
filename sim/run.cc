@@ -25,12 +25,12 @@ void MyRunAction::BeginOfRunAction(const G4Run*)
   //strRunID << runID;
   
   
-  man->OpenFile("output.root");
+  man->OpenFile("../output.root");
 }
 
 void MyRunAction::EndOfRunAction(const G4Run*)
 {
   G4AnalysisManager *man = G4AnalysisManager::Instance();
   man->Write();
-  man->CloseFile("output.root");
+  man->CloseFile("../output.root");
 }
