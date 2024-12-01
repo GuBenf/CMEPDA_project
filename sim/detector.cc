@@ -27,13 +27,11 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
 
   G4cout<< "Detector Position: " << posDetector << G4endl;
 
-  G4int det_1;
-  G4int det_2;
-  G4int det_3;
-  G4int det_4;
-  G4int det_5;
-  G4int det_6;
+  G4double hitTime = preStepPoint->GetGlobalTime();
 
+  G4int det_1, det_2, det_3, det_4, det_5, det_6 = 0;
+  G4double T_1,T_2,T_3,T_4,T_5,T_6 = 0; 
+    
   if(posDetector[1] <= 10.+0.5)
   {
     if(posDetector[1] >= 10.-0.5)
@@ -41,9 +39,16 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
 	    det_1 = 1;
 	    det_2 = 0;
 	    det_3 = 0;
-      det_4 = 0;
+	    det_4 = 0;
 	    det_5 = 0;
 	    det_6 = 0;
+
+	    T_1 = hitTime;
+	    T_2 = 0;
+	    T_3 = 0;
+	    T_4 = 0;
+	    T_5 = 0;
+	    T_6 = 0;
 	  }
   }
   else if(posDetector[1] <= 20.+0.5)
@@ -53,57 +58,92 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
 	    det_1 = 0;
 	    det_2 = 1;
 	    det_3 = 0;
-      det_4 = 0;
+	    det_4 = 0;
 	    det_5 = 0;
 	    det_6 = 0;
+
+	    T_1 = 0;
+	    T_2 = hitTime;
+	    T_3 = 0;
+	    T_4 = 0;
+	    T_5 = 0;
+	    T_6 = 0;
 	  }
   }
   else if(posDetector[1] <=  30.+0.5)
   {
     if(posDetector[1] >=30.-0.5)
 	  {
-      det_1 = 0;
+	    det_1 = 0;
 	    det_2 = 0;
 	    det_3 = 1;
-      det_4 = 0;
+	    det_4 = 0;
 	    det_5 = 0;
 	    det_6 = 0;
+
+	    T_1 = 0;
+	    T_2 = 0;
+	    T_3 = hitTime;
+	    T_4 = 0;
+	    T_5 = 0;
+	    T_6 = 0;
 	  }
   }
   else if(posDetector[1] <=  40.+0.5)
   {
     if(posDetector[1] >=40.-0.5)
 	  {
-      det_1 = 0;
+	    det_1 = 0;
 	    det_2 = 0;
 	    det_3 = 0;
-      det_4 = 1;
+	    det_4 = 1;
 	    det_5 = 0;
 	    det_6 = 0;
+
+	    T_1 = 0;
+	    T_2 = 0;
+	    T_3 = 0;
+	    T_4 = hitTime;
+	    T_5 = 0;
+	    T_6 = 0;
 	  }
   }
   else if(posDetector[1] <=  50.+0.5)
   {
     if(posDetector[1] >=50.-0.5)
 	  {
-      det_1 = 0;
+	    det_1 = 0;
 	    det_2 = 0;
 	    det_3 = 0;
-      det_4 = 0;
+	    det_4 = 0;
 	    det_5 = 1;
 	    det_6 = 0;
+
+	    T_1 = 0;
+	    T_2 = 0;
+	    T_3 = 0;
+	    T_4 = 0;
+	    T_5 = hitTime;
+	    T_6 = 0;
 	  }
   }
   else if(posDetector[1] <=  60.+0.5)
   {
     if(posDetector[1] >=60.-0.5)
 	  {
-      det_1 = 0;
+	    det_1 = 0;
 	    det_2 = 0;
 	    det_3 = 0;
-      det_4 = 0;
+	    det_4 = 0;
 	    det_5 = 0;
 	    det_6 = 1;
+
+	    T_1 = 0;
+	    T_2 = 0;
+	    T_3 = 0;
+	    T_4 = 0;
+	    T_5 = 0;
+	    T_6 = hitTime;
 	  }
   }
 
@@ -118,6 +158,12 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
   man->FillNtupleIColumn(4,det_4);
   man->FillNtupleIColumn(5,det_5);
   man->FillNtupleIColumn(6,det_6);
+  man->FillNtupleDColumn(7,T_1);
+  man->FillNtupleDColumn(8,T_2);
+  man->FillNtupleDColumn(9,T_3);
+  man->FillNtupleDColumn(10,T_4);
+  man->FillNtupleDColumn(11,T_5);
+  man->FillNtupleDColumn(12,T_6);
   man->AddNtupleRow(0);
   
 }
