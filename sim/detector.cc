@@ -27,83 +27,76 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
 
   G4cout<< "Detector Position: " << posDetector << G4endl;
 
-  G4int det_1;
-  G4int det_2;
-  G4int det_3;
-  G4int det_4;
-  G4int det_5;
-  G4int det_6;
-
   if(posDetector[1] <= 10.+0.5)
   {
     if(posDetector[1] >= 10.-0.5)
 	  {
-	    det_1 = 1;
-	    det_2 = 0;
-	    det_3 = 0;
-      det_4 = 0;
-	    det_5 = 0;
-	    det_6 = 0;
+	    set_det_1(1);
+	    set_det_2(0);
+	    set_det_3(0);
+      set_det_4(0);
+	    set_det_5(0);
+	    set_det_6(0);
 	  }
   }
   else if(posDetector[1] <= 20.+0.5)
   {
     if(posDetector[1] >= 20.-0.5)
 	  {
-	    det_1 = 0;
-	    det_2 = 1;
-	    det_3 = 0;
-      det_4 = 0;
-	    det_5 = 0;
-	    det_6 = 0;
+	    set_det_1(0);
+	    set_det_2(1);
+	    set_det_3(0);
+      set_det_4(0);
+	    set_det_5(0);
+	    set_det_6(0);
 	  }
   }
   else if(posDetector[1] <=  30.+0.5)
   {
     if(posDetector[1] >=30.-0.5)
 	  {
-      det_1 = 0;
-	    det_2 = 0;
-	    det_3 = 1;
-      det_4 = 0;
-	    det_5 = 0;
-	    det_6 = 0;
+      set_det_1(0);
+	    set_det_2(0);
+	    set_det_3(1);
+      set_det_4(0);
+	    set_det_5(0);
+	    set_det_6(0);
 	  }
   }
   else if(posDetector[1] <=  40.+0.5)
   {
     if(posDetector[1] >=40.-0.5)
 	  {
-      det_1 = 0;
-	    det_2 = 0;
-	    det_3 = 0;
-      det_4 = 1;
-	    det_5 = 0;
-	    det_6 = 0;
+      set_det_1(0);
+	    set_det_2(0);
+	    set_det_3(0);
+      set_det_4(1);
+	    set_det_5(0);
+	    set_det_6(0);
 	  }
   }
   else if(posDetector[1] <=  50.+0.5)
   {
     if(posDetector[1] >=50.-0.5)
 	  {
-      det_1 = 0;
-	    det_2 = 0;
-	    det_3 = 0;
-      det_4 = 0;
-	    det_5 = 1;
-	    det_6 = 0;
+      set_det_1(0);
+	    set_det_2(0);
+	    set_det_3(0);
+      set_det_4(0);
+	    set_det_5(1);
+	    set_det_6(0);
 	  }
   }
   else if(posDetector[1] <=  60.+0.5)
   {
     if(posDetector[1] >=60.-0.5)
 	  {
-      det_1 = 0;
-	    det_2 = 0;
-	    det_3 = 0;
-      det_4 = 0;
-	    det_5 = 0;
-	    det_6 = 1;
+      set_det_1(0);
+	    set_det_2(0);
+	    set_det_3(0);
+      set_det_4(0);
+	    set_det_5(0);
+	    set_det_6(1);
 	  }
   }
 
@@ -112,12 +105,12 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
   
   G4AnalysisManager *man = G4AnalysisManager::Instance();
   man->FillNtupleIColumn(0,evt);
-  man->FillNtupleIColumn(1,det_1);
-  man->FillNtupleIColumn(2,det_2);
-  man->FillNtupleIColumn(3,det_3);
-  man->FillNtupleIColumn(4,det_4);
-  man->FillNtupleIColumn(5,det_5);
-  man->FillNtupleIColumn(6,det_6);
+  man->FillNtupleIColumn(1,get_det_1());
+  man->FillNtupleIColumn(2,get_det_2());
+  man->FillNtupleIColumn(3,get_det_3());
+  man->FillNtupleIColumn(4,get_det_4());
+  man->FillNtupleIColumn(5,get_det_5());
+  man->FillNtupleIColumn(6,get_det_6());
   man->AddNtupleRow(0);
   
 }
