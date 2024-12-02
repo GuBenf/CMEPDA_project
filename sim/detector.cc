@@ -135,21 +135,21 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
   G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
   
   G4AnalysisManager *man = G4AnalysisManager::Instance();
-  man->FillNtupleIColumn(0,evt);
+  man->FillNtupleIColumn(0,0,evt);
   
-  man->FillNtupleIColumn(1,get_det_1());
-  man->FillNtupleIColumn(2,get_det_2());
-  man->FillNtupleIColumn(3,get_det_3());
-  man->FillNtupleIColumn(4,get_det_4());
-  man->FillNtupleIColumn(5,get_det_5());
-  man->FillNtupleIColumn(6,get_det_6());
+  man->FillNtupleIColumn(0,1,get_det_1());
+  man->FillNtupleIColumn(0,2,get_det_2());
+  man->FillNtupleIColumn(0,3,get_det_3());
+  man->FillNtupleIColumn(0,4,get_det_4());
+  man->FillNtupleIColumn(0,5,get_det_5());
+  man->FillNtupleIColumn(0,6,get_det_6());
   
-  man->FillNtupleDColumn(7,get_t_1());
-  man->FillNtupleDColumn(8,get_t_2());
-  man->FillNtupleDColumn(9,get_t_3());
-  man->FillNtupleDColumn(10,get_t_4());
-  man->FillNtupleDColumn(11,get_t_5());
-  man->FillNtupleDColumn(12,get_t_6());
+  man->FillNtupleDColumn(0,7,get_t_1());
+  man->FillNtupleDColumn(0,8,get_t_2());
+  man->FillNtupleDColumn(0,9,get_t_3());
+  man->FillNtupleDColumn(0,10,get_t_4());
+  man->FillNtupleDColumn(0,11,get_t_5());
+  man->FillNtupleDColumn(0,12,get_t_6());
   man->AddNtupleRow(0);
   
 }

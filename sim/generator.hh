@@ -6,6 +6,7 @@
 #include "G4SystemOfUnits.hh"
 #include "G4ParticleTable.hh"
 #include "G4GeneralParticleSource.hh"
+#include "G4AnalysisManager.hh"
 #include "globals.hh"
 #include "G4RandomTools.hh"
 

@@ -20,6 +20,11 @@ MyRunAction::MyRunAction()
   man->CreateNtupleDColumn("T_5");
   man->CreateNtupleDColumn("T_6");  
   man->FinishNtuple(0);
+
+  man->CreateNtuple("Simulation","Simulation");
+  man->CreateNtupleDColumn("Momentum");
+  man->CreateNtupleDColumn("CosTheta");
+  man->FinishNtuple(1);
 }
 
 MyRunAction::~MyRunAction()
