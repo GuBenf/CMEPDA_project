@@ -37,7 +37,7 @@ int main(int argc, char** argv)
   //UImanager->ApplyCommand("/tracking/verbose 2");
   UImanager->ApplyCommand("/optics/verbose 2");
   UImanager->ApplyCommand("/geometry/test/run");
-  UImanager->ApplyCommand("/run/beamOn 100");
+  UImanager->ApplyCommand("/run/beamOn 1000");
 
 
   ui->SessionStart();

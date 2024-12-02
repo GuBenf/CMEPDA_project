@@ -46,8 +46,12 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
 
   G4bool part = false;
   G4double p_m = 0.;
+  G4int ind = 0;
   while (part == false)
     {
+      ind = ind +1;
+      if (ind <4)
+	{
   G4double u_mom = G4UniformRand();
   G4double p_mom = u_mom * 10.*GeV;
   if (p_mom > 1*GeV)
@@ -65,14 +69,20 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
       part = true;
       p_m = p_mom;
     }
+	}
+      else
+	{part=true;}
     }
 
   fParticleGun->SetParticleMomentum(p_m);
 
   fParticleGun->GeneratePrimaryVertex(anEvent);
 
+  G4int evtID = anEvent->GetEventID();
+  
+
   G4AnalysisManager *man = G4AnalysisManager::Instance();
-  G4cout<<p_m<<G4endl;
+  G4cout<<evtID<< " " << p_m<<G4endl;
   man->FillNtupleDColumn(1,0,p_m);
   man->FillNtupleDColumn(1,1,cosTheta);
   man->AddNtupleRow(1);
