@@ -8,10 +8,9 @@ MyDetectorConstruction::~MyDetectorConstruction(){
 
 }
 
-std::tuple<G4VPhysicalVolume *, G4VPhysicalVolume *, G4VPhysicalVolume *> MyDetectorConstruction::DetectorLayer(G4double posX, G4double posY, G4double posZ, G4LogicalVolume *logicWorld, G4int i)
+std::tuple<G4VPhysicalVolume *, G4VPhysicalVolume *> MyDetectorConstruction::DetectorLayer(G4double posX, G4double posY, G4double posZ, G4LogicalVolume *logicWorld, G4int i)
 {
   // --------------------Define the material for the scintillator--------------------
-  G4Material *scint_material = nist->FindOrBuildMaterial("G4_POLYSTYRENE");
 
   G4MaterialPropertiesTable *mptScint = new G4MaterialPropertiesTable();
   G4double rindex[2] = {1.587, 1.587};
@@ -37,15 +36,9 @@ std::tuple<G4VPhysicalVolume *, G4VPhysicalVolume *, G4VPhysicalVolume *> MyDete
   G4LogicalVolume *logicWaveGuide = new G4LogicalVolume(solidWaveGuide, scint_material , "logicWaveGuide");
   G4VPhysicalVolume *physWaveGuide = new G4PVPlacement(0, wg_pos, logicWaveGuide, "physWaveGuide", logicWorld, false, i, true);
 
-  //
-  G4ThreeVector pmt_pos(posX, posY ,(det_z+2*d_z+pmt_z)); //position
-  G4Box *solidPMT = new G4Box("solidPMT", pmt_x , pmt_y , pmt_z);
-  logicDetector = new G4LogicalVolume(solidPMT,scint_material,"logicDetector"); //The initialization is different caus this is also used as a sensitive detector
-  G4VPhysicalVolume *physPMT = new G4PVPlacement(0,pmt_pos,logicDetector,"physPMT",logicWorld,false,i,true);
-
 
   //--------------------return--------------------
-  return std::make_tuple(physDetector, physWaveGuide, physPMT);
+  return std::make_tuple(physDetector, physWaveGuide);
 }
 
 G4VPhysicalVolume *MyDetectorConstruction::Construct()
@@ -70,6 +63,16 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
   for (G4int i = 1; i < nDetectors +1; i++){
     DetectorLayer(0.*cm, i * 10.*cm, 0.*cm, logicWorld, i);
   }
+  
+  
+  G4Box *solidPMT = new G4Box("solidPMT", pmt_x , pmt_y , pmt_z);
+  logicDetector = new G4LogicalVolume(solidPMT,scint_material,"logicDetector"); //The initialization is different caus this is also used as a sensitive detector
+  for (G4int i = 1; i < nDetectors +1; i++){
+    G4ThreeVector pmt_pos(0.*cm, i * 10.*cm ,(det_z+2*d_z+pmt_z)); //position
+    G4VPhysicalVolume *physPMT = new G4PVPlacement(0,pmt_pos,logicDetector,"physPMT",logicWorld,false,i,true);
+  }
+
+  
 
 
   ////--------------------Return the world//--------------------
