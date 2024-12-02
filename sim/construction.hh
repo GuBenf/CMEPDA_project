@@ -26,12 +26,14 @@ public:
   ~MyDetectorConstruction();
 
   virtual G4VPhysicalVolume *Construct();
-  virtual std::tuple<G4VPhysicalVolume *, G4VPhysicalVolume *, G4VPhysicalVolume *> DetectorLayer(G4double posX, G4double posY, G4double posZ, G4LogicalVolume *logicWorld, G4int index);
+  virtual std::tuple<G4VPhysicalVolume *, G4VPhysicalVolume *> DetectorLayer(G4double posX, G4double posY, G4double posZ, G4LogicalVolume *logicWorld, G4int index);
 
 private:
   G4LogicalVolume *logicDetector;
   virtual void ConstructSDandField();
+  
   G4NistManager *nist = G4NistManager::Instance();
+  G4Material *scint_material = nist->FindOrBuildMaterial("G4_POLYSTYRENE");
 
   G4double energy[2] = {1.95*eV, 1.95*eV};
 
