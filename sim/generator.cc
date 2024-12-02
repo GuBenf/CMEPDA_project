@@ -43,7 +43,12 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
 
   fParticleGun->SetParticlePosition(pos);
   fParticleGun->SetParticleMomentumDirection(mom);
-  fParticleGun->SetParticleMomentum(50.*MeV);
+
+  G4double u_mom = G4UniformRand();
+  G4double p_mom = u_mom * 10.*GeV;
+  if (p_mom < 1*GeV)
+    {G4cout<< "UNIFORME" << G4endl;}
+  fParticleGun->SetParticleMomentum(p_mom);
   
 
   fParticleGun->GeneratePrimaryVertex(anEvent);
