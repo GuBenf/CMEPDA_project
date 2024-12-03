@@ -41,8 +41,8 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
   G4double py = std::cos(theta);
   G4ThreeVector mom(px, py, pz);
 
-  G4ThreeVector pos1 = (0., 1.*m, 0.);
-  G4ThreeVector mom1 = (0., -1., 0.);
+  G4ThreeVector pos1(0., 1.*m, 0.);
+  G4ThreeVector mom1(0., -1., 0.);
 
   fParticleGun->SetParticlePosition(pos1);
   fParticleGun->SetParticleMomentumDirection(mom1);
