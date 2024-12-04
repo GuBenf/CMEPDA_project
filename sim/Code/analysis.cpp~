@@ -69,7 +69,7 @@ void analysis(TString file, TString name){
     int totalEntries = tree->GetEntries();
 
     vector<float> timeDeltas;
-    //cout<<totalEntries<<endl;
+    cout<<totalEntries<<endl;
 
 
     // ===============CHECK FOR THE NUMBER OF EVENTS===============
@@ -104,6 +104,7 @@ void analysis(TString file, TString name){
         if(time > 50.){
 	  if(event > prevevt){
             hist->Fill(time);
+	    cout << prevevt <<endl;
 	    prevevt = event;
 	  }
         }
