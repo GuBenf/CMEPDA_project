@@ -1,7 +1,13 @@
 /**
- * Codice per analizzare i dati simulati tramite Geant@4. 
+ * @file analysis.cpp
+ * @brief Codice per analizzare i dati simulati tramite Geant@4. 
+ * 
  * Restituisce un plot degli intervalli di tempo fra muone rivelato e positrone di decadimento rilevato con fit esponenziale decrescente.
-*/
+ * 
+ * @author Benfratello G., Niccolai A.
+ * @date 2024.12.04
+ * @version 1.0
+ */
 
 #include "TString.h"
 #include "TTree.h"
