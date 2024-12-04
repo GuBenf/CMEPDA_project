@@ -18,7 +18,7 @@ std::tuple<G4VPhysicalVolume *, G4VPhysicalVolume *> MyDetectorConstruction::Det
 
   mptScint->AddProperty("RINDEX", energy, rindex, 2);
   mptScint->AddProperty("SCINTILLATIONCOMPONENT1", energy, fraction, 2);
-  mptScint->AddConstProperty("SCINTILLATIONYIELD", 1000./MeV);
+  mptScint->AddConstProperty("SCINTILLATIONYIELD", 10000./MeV);
   mptScint->AddConstProperty("RESOLUTIONSCALE", 1.); //sigma of the distribution
   mptScint->AddConstProperty("SCINTILLATIONTIMECONSTANT1", 2.4 * ns);
 

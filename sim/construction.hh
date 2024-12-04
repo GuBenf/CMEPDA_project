@@ -44,7 +44,7 @@ private:
 
   //Waveguides dimensions
   G4double d_x1 = 20.*cm;
-  G4double d_x2 = 0.5*cm;
+  G4double d_x2 = 2*cm;
   G4double d_y1 = det_y;
   G4double d_y2 = det_y;
   G4double d_z = 10*cm;

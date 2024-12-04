@@ -25,8 +25,8 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
   // Generate a random position on a plane (e.g., square plane)
   G4double randomValue1 = CLHEP::HepRandom::getTheEngine()->flat();
   G4double randomValue2 = CLHEP::HepRandom::getTheEngine()->flat();
-  G4double planeHalfX = 100.0 * cm;  // Half-width of the plane along X
-  G4double planeHalfZ = 100.0 * cm;  // Half-height of the plane along Z
+  G4double planeHalfX = 20.0 * cm;  // Half-width of the plane along X
+  G4double planeHalfZ = 24.0 * cm;  // Half-height of the plane along Z
   G4double x = (2.0 * randomValue1 - 1.0) * planeHalfX; // Uniform random in [-planeHalfX, planeHalfX]
   G4double z = (2.0 * randomValue2 - 1.0) * planeHalfZ; // Uniform random in [-planeHalfZ, planeHalfZ]
   G4double y = 1.0 * m;  // Plane lies at z = 1 m
@@ -44,7 +44,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
   G4ThreeVector pos1(0., 1.*m, 0.);
   G4ThreeVector mom1(0., -1., 0.);
 
-  fParticleGun->SetParticlePosition(pos1);
+  fParticleGun->SetParticlePosition(pos);
   fParticleGun->SetParticleMomentumDirection(mom1);
 
   G4bool part = false;
@@ -77,7 +77,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
 	{part=true;}
     }
 
-  fParticleGun->SetParticleMomentum(p_m);
+  fParticleGun->SetParticleMomentum(71*MeV);
 
   fParticleGun->GeneratePrimaryVertex(anEvent);
 

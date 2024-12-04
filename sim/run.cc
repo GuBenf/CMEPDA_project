@@ -19,6 +19,7 @@ MyRunAction::MyRunAction()
   man->CreateNtupleDColumn("T_4");
   man->CreateNtupleDColumn("T_5");
   man->CreateNtupleDColumn("T_6");  
+  man->CreateNtupleDColumn("Times");
   man->FinishNtuple(0);
 
   man->CreateNtuple("Simulation","Simulation");

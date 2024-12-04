@@ -150,6 +150,7 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
   man->FillNtupleDColumn(0,10,get_t_4());
   man->FillNtupleDColumn(0,11,get_t_5());
   man->FillNtupleDColumn(0,12,get_t_6());
+  man->FillNtupleDColumn(0,13,hitTime);
   man->AddNtupleRow(0);
   
 }
