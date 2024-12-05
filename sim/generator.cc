@@ -83,7 +83,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
   // 	{part=true;}
   //   }
 
-  fParticleGun->SetParticleMomentum(71*MeV);
+  fParticleGun->SetParticleMomentum(p_mom);
 
   fParticleGun->GeneratePrimaryVertex(anEvent);
 
