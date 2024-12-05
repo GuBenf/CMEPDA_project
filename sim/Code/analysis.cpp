@@ -111,7 +111,18 @@ void analysis(TString file, TString name){
         }
 
     }
+    TCanvas *c = new TCanvas("Fit Muon lifetime", "Fit Muon lifetime");
+    //hist->Draw();
+
+    TF1 *fitFunction = new TF1("fitFunction", "[1]/[0] * TMath::Exp(-x / [0])", 0. ,20000.);
+    fitFunction->SetParameters(2150., 100);
+    fitFunction->SetParNames("#tau", "Ampiezza");
+    hist->Fit("fitFunction", "LI");
     hist->Draw();
+//
+    //c->Update();
+
+    
 
 
     
