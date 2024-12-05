@@ -7,6 +7,8 @@
 #include "G4ParticleTable.hh"
 #include "G4GeneralParticleSource.hh"
 #include "G4AnalysisManager.hh"
+#include "G4Run.hh"
+#include "G4RunManager.hh"
 #include "globals.hh"
 #include "G4RandomTools.hh"
 

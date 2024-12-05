@@ -87,7 +87,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
 
   fParticleGun->GeneratePrimaryVertex(anEvent);
 
-  G4int evtID = anEvent->GetEventID();
+  G4int evtID = G4RunManager::GetRunManager()->GetCurrentRun()->GetRunID();
   
 
   G4AnalysisManager *man = G4AnalysisManager::Instance();

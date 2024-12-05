@@ -52,7 +52,12 @@ int main(int argc, char** argv)
   man->SetFileName("../output.root");
   //man->SetVerboseLevel(1);
   man->OpenFile("../output.root");
-  for(int i = 0; i< 1000; i++){
+  int runs = 1000;
+  if (argv.size()>1){
+    runs = std::stoi(argv[1]);
+  }
+  G4cout<< runs << G4endl;
+  for(int i = 0; i< runs; i++){
     UImanager->ApplyCommand("/run/beamOn 1");
   }
   man->CloseFile();
