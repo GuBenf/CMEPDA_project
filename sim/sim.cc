@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "G4AnalysisManager.hh"
 #include "G4RunManager.hh"
 #include "G4UImanager.hh"
 #include "G4VisManager.hh"
@@ -9,6 +10,8 @@
 #include "construction.hh"
 #include "physics.hh"
 #include "action.hh"
+
+#define G4DEBUG_MEMORY
 
 int main(int argc, char** argv)
 {
@@ -39,11 +42,20 @@ int main(int argc, char** argv)
   UImanager->ApplyCommand("/vis/viewer/set/autoRefresh true");
   UImanager->ApplyCommand("/vis/scene/add/trajectories smooth");
   UImanager->ApplyCommand("/vis/scene/endOfEventAction accumulate 1");
-  //UImanager->ApplyCommand("/run/verbose 2");
-  //UImanager->ApplyCommand("/tracking/verbose 2");
-  //UImanager->ApplyCommand("/optics/verbose 2");
+  UImanager->ApplyCommand("/run/verbose 0");
+  UImanager->ApplyCommand("/tracking/verbose 0");
+  UImanager->ApplyCommand("/optics/verbose 0");
   UImanager->ApplyCommand("/geometry/test/run");
-  UImanager->ApplyCommand("/run/beamOn 1000");
+
+
+  G4AnalysisManager *man = G4AnalysisManager::Instance();
+  man->SetFileName("../output.root");
+  //man->SetVerboseLevel(1);
+  man->OpenFile("../output.root");
+  for(int i = 0; i< 1000; i++){
+    UImanager->ApplyCommand("/run/beamOn 1");
+  }
+  man->CloseFile();
 
 
   ui->SessionStart();

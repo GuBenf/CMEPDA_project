@@ -33,14 +33,16 @@ MyRunAction::~MyRunAction()
 
 void MyRunAction::BeginOfRunAction(const G4Run*)
 {
-  G4AnalysisManager *man = G4AnalysisManager::Instance();
-  
-  man->OpenFile("../output.root");
+  //G4AnalysisManager *man = G4AnalysisManager::Instance();
+  //man->SetFileName("../output.root");
+  ////man->SetVerboseLevel(1);
+  //man->OpenFile("../output.root");
 }
 
 void MyRunAction::EndOfRunAction(const G4Run*)
 {
-  G4AnalysisManager *man = G4AnalysisManager::Instance();
-  man->Write();
-  man->CloseFile("../output.root");
+  //G4AnalysisManager *man = G4AnalysisManager::Instance();
+  //man->Write();
+  ////man->Clear();
+  //man->CloseFile("../output.root");
 }

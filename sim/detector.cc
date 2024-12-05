@@ -132,7 +132,7 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
 
   //G4cout << "Detector: "<< det_1 << " " << det_2 << " " << det_3 << " " << det_4 << " " << det_5 << " " << det_6 << G4endl;
   //G4cout << "Hittime: " << t_1 << " " << t_2 << " " << t_3 << " " << t_4 << " " << t_5 << " " << t_6 << G4endl;
-  G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
+  G4int evt = G4RunManager::GetRunManager()->GetCurrentRun()->GetRunID();
   
   G4AnalysisManager *man = G4AnalysisManager::Instance();
   man->FillNtupleIColumn(0,0,evt);
@@ -152,5 +152,4 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
   man->FillNtupleDColumn(0,12,get_t_6());
   man->FillNtupleDColumn(0,13,hitTime);
   man->AddNtupleRow(0);
-  
 }
