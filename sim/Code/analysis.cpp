@@ -98,12 +98,15 @@ void analysis(TString file, TString name){
     //cout<<totalEvents<<endl;
     //=============================================================
 
-    TH1D *hist= new TH1D("hist", "hist", 100, 0., 0.);
+    TH1D *hist= new TH1D("Mu-Life simulation", "Mu-Life simulation", 100, 0., 0.);
+    hist->GetXaxis()->SetTitle("Time [us]");
+    hist->GetYaxis()->SetTitle("Entries");
+    hist->SetFillColor(kAzure-4);
     int prevevt = -1;
     double currentTime, nextTime;
     for (int ev = 0; ev < totalEntries; ev++) {
         tree->GetEntry(ev);
-        if(time > 50.){
+        if(time > 0.050){
 	  if(event > prevevt){
             hist->Fill(time);
 	    prevevt = event;

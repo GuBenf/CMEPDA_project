@@ -27,8 +27,8 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
 
   //G4cout<< "Detector Position: " << posDetector << G4endl;
 
-  G4double hitTime = preStepPoint->GetGlobalTime();
-
+  G4double hittime = preStepPoint->GetGlobalTime();
+  G4double hitTime = hittime*0.001; //convert in us
   //G4int det_1, det_2, det_3, det_4, det_5, det_6 = 0;
   // G4double T_1,T_2,T_3,T_4,T_5,T_6 = 0; 
   //std::cout<< posDetector[1]<<std::endl;
