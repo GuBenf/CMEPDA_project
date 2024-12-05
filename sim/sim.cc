@@ -52,8 +52,8 @@ int main(int argc, char** argv)
   man->SetFileName("../output.root");
   //man->SetVerboseLevel(1);
   man->OpenFile("../output.root");
-  int runs = 1000;
-  if (argv.size()>1){
+  int runs = 10;
+  if (argc>1){
     runs = std::stoi(argv[1]);
   }
   G4cout<< runs << G4endl;
