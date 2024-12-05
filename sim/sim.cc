@@ -12,6 +12,12 @@
 
 int main(int argc, char** argv)
 {
+  // Choose the Random engine
+  //
+  G4Random::setTheEngine(new CLHEP::RanecuEngine);
+  G4long seed = time(NULL);
+  G4Random::setTheSeed(seed);
+  
   //To run geant4
   G4RunManager *runManager = new G4RunManager();
   runManager->SetUserInitialization(new MyDetectorConstruction());

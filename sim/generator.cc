@@ -47,35 +47,41 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
   fParticleGun->SetParticlePosition(pos);
   fParticleGun->SetParticleMomentumDirection(mom1);
 
-  G4bool part = false;
-  G4double p_m = 0.;
-  G4int ind = 0;
-  while (part == false)
-    {
-      ind = ind +1;
-      if (ind <4)
-	{
-  G4double u_mom = G4UniformRand();
-  G4double p_mom = u_mom * 10.*GeV;
-  if (p_mom > 1*GeV)
-    {
-      G4double cas = 1.*GeV/p_mom;
-      G4double p_sel = G4UniformRand();
-      if (p_sel<=cas)
-	{
-	  part = true;
-	  p_m = p_mom;
-	}
-    }
-  else if (p_mom<=1.*GeV)
-    {
-      part = true;
-      p_m = p_mom;
-    }
-	}
-      else
-	{part=true;}
-    }
+  G4double mean = 70.0;    // Mean of the Gaussian distribution
+  G4double sigma = 20.0;   // Standard deviation of the Gaussian distribution
+
+// Generate a Gaussian-distributed random number
+  G4double u_mom = G4RandGauss::shoot(mean, sigma);
+  G4double p_mom = u_mom * MeV;
+  // G4bool part = false;
+  // G4double p_m = 0.;
+  // G4int ind = 0;
+  // while (part == false)
+  //   {
+  //     ind = ind +1;
+  //     if (ind <4)
+  // 	{
+  // G4double u_mom = G4UniformRand();
+  // G4double p_mom = u_mom * 10.*GeV;
+  // if (p_mom > 1*GeV)
+  //   {
+  //     G4double cas = 1.*GeV/p_mom;
+  //     G4double p_sel = G4UniformRand();
+  //     if (p_sel<=cas)
+  // 	{
+  // 	  part = true;
+  // 	  p_m = p_mom;
+  // 	}
+  //   }
+  // else if (p_mom<=1.*GeV)
+  //   {
+  //     part = true;
+  //     p_m = p_mom;
+  //   }
+  // 	}
+  //     else
+  // 	{part=true;}
+  //   }
 
   fParticleGun->SetParticleMomentum(71*MeV);
 
@@ -85,8 +91,8 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
   
 
   G4AnalysisManager *man = G4AnalysisManager::Instance();
-  G4cout<<evtID<< " " << p_m<<G4endl;
-  man->FillNtupleDColumn(1,0,p_m);
+  G4cout<<evtID<< " " << p_mom<<G4endl;
+  man->FillNtupleDColumn(1,0,p_mom);
   man->FillNtupleDColumn(1,1,cosTheta);
   man->AddNtupleRow(1);
 
