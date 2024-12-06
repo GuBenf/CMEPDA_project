@@ -22,16 +22,20 @@ jobs:
           echo "List project contents:"
           ls -l
 
-
       - name: Generate Documentation
         run: doxygen .github/workflows/Doxyfile
 
       - name: List contents of docs/html
         run: ls -al ./docs/html/
 
+      - name: Debug Cloned gh-pages
+      run: |
+        echo "Files in gh-pages branch before deletion:"
+        ls -R /home/runner/actions_github_pages_*
+
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./html
+          publish_dir: .docs/html
