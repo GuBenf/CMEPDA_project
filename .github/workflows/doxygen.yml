@@ -22,8 +22,6 @@ jobs:
           echo "List project contents:"
           ls -l
 
-          echo "Check if sim.cc exists"
-          ls ../../sim/sim.cc
 
       - name: Generate Documentation
         run: doxygen .github/workflows/Doxyfile
