@@ -9,9 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Clean previous documentation
-      run: |
-          rm -rf ./docs/html/
       - name: Checkout repository
         uses: actions/checkout@v3
 
