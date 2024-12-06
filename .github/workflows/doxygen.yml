@@ -28,12 +28,6 @@ jobs:
       - name: List contents of docs/html
         run: ls -al ./docs/html/
 
-      - name: Debug Cloned gh-pages
-      run: |
-        echo "Files in gh-pages branch before deletion:"
-        ls -R /home/runner/actions_github_pages_*
-
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
