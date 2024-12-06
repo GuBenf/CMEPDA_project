@@ -28,11 +28,6 @@ jobs:
       - name: List contents of docs/html
         run: ls -al ./docs/html/
 
-      - name: Copy files to gh-pages
-        run: |
-          echo "Copying files to deployment directory..."
-          mkdir -p $GITHUB_WORKSPACE/actions_github_pages/
-          cp -R ./docs/html/* $GITHUB_WORKSPACE/actions_github_pages/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
