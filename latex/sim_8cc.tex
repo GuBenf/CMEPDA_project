@@ -1,0 +1,63 @@
+\doxysection{sim/sim.cc File Reference}
+\hypertarget{sim_8cc}{}\label{sim_8cc}\index{sim/sim.cc@{sim/sim.cc}}
+
+
+Main file of the Geant4 project.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}G4\+Analysis\+Manager.\+hh"{}}\newline
+{\ttfamily \#include "{}G4\+Run\+Manager.\+hh"{}}\newline
+{\ttfamily \#include "{}G4\+UImanager.\+hh"{}}\newline
+{\ttfamily \#include "{}G4\+Vis\+Manager.\+hh"{}}\newline
+{\ttfamily \#include "{}G4\+Vis\+Executive.\+hh"{}}\newline
+{\ttfamily \#include "{}G4\+UIExecutive.\+hh"{}}\newline
+{\ttfamily \#include "{}construction.\+hh"{}}\newline
+{\ttfamily \#include "{}physics.\+hh"{}}\newline
+{\ttfamily \#include "{}action.\+hh"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{sim_8cc_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\begin{DoxyCompactList}\small\item\em Main entry point for the Geant4 simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main file of the Geant4 project. 
+
+This program uses the Geant4 framework to run a particle simulation, visualize the results, and log data to an output file. The simulation is configured to be run via a user interface (UI) with a 3D graphical view of the results. Additionally, simulation data is collected and written to a .root file.
+
+\begin{DoxyAuthor}{Author}
+Benfratello G., Niccolai A. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024-\/12-\/05 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sim_8cc_a3c04138a5bfe5d72780bb7e82a18e627}\index{sim.cc@{sim.cc}!main@{main}}
+\index{main@{main}!sim.cc@{sim.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{sim_8cc_a3c04138a5bfe5d72780bb7e82a18e627} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{}\end{DoxyParamCaption})}
+
+
+
+Main entry point for the Geant4 simulation. 
+
+This function initializes the Geant4 framework, sets up the user interface, and begins the simulation. It configures random number generation, initializes the simulation environment, and sets up visualization commands. It also opens the output file for data logging and runs the simulation for 100,000 events.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Argument count from the command line. \\
+\hline
+{\em argv} & Argument values from the command line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer exit status. 
+\end{DoxyReturn}
