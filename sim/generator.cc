@@ -47,7 +47,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
   fParticleGun->SetParticlePosition(pos);
   fParticleGun->SetParticleMomentumDirection(mom1);
 
-  G4double mean = 70.0;    // Mean of the Gaussian distribution
+  G4double mean = 80.0;    // Mean of the Gaussian distribution
   G4double sigma = 20.0;   // Standard deviation of the Gaussian distribution
 
 // Generate a Gaussian-distributed random number

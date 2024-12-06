@@ -68,11 +68,11 @@ int main(int argc, char** argv)
 
   // Configure analysis manager
   G4AnalysisManager *man = G4AnalysisManager::Instance();
-  man->SetFileName("../outputprova.root");
-  man->OpenFile("../outputprova.root");
+  man->SetFileName("../output.root");
+  man->OpenFile("../output.root");
 
   // Run simulation for "runs" events
-  int runs = 10;
+  int runs = 1000;
   if (argc>1){
     runs = std::stoi(argv[1]);
   }
