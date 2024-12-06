@@ -1,5 +1,5 @@
 /**
- * @file sim.cpp
+ * @file sim.cc
  * @brief Main file of the Geant4 project.
  * 
  * This program uses the Geant4 framework to run a particle simulation, visualize the results, and log data to an output file. 
