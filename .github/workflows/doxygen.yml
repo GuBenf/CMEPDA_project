@@ -15,6 +15,16 @@ jobs:
       - name: Install Doxygen
         run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
 
+      - name: Check the Project Structure
+        run: |
+          echo "Current Directory:"
+          pwd
+          echo "List project contents:"
+          ls -l
+
+          echo "Check if sim.cc exists"
+          ls ../../sim/sim.cc
+
       - name: Generate Documentation
         run: doxygen .github/workflows/Doxyfile
 
