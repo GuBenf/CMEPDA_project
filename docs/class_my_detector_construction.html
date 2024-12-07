@@ -137,7 +137,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor for <a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a>. </p>
-<p>Initializes the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object and its associated materials. </p>
+<p>Default constructor for <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code>.</p>
+<p>Initializes the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object and its associated materials.</p>
+<p>This constructor initializes the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object but does not perform any specific setup. Actions are defined in the <code>Build</code> method. </p>
 
 </div>
 </div>
@@ -157,7 +159,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor for <a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a>. </p>
-<p>Cleans up resources used by the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object. </p>
+<p>Destructor for <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code>.</p>
+<p>Cleans up resources used by the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object.</p>
+<p>Cleans up resources used by the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object, if any. </p>
 
 </div>
 </div>
@@ -186,8 +190,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs the detector geometry and materials. </p>
+<p>Constructs the main detector geometry and places it within the world volume.</p>
 <p>Defines the physical and logical volumes, placements, and materials for the detector components. Called automatically by the Geant4 framework.</p>
-<dl class="section return"><dt>Returns</dt><dd>The world physical volume of the detector geometry. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The world physical volume of the detector geometry.</dd></dl>
+<p>Constructs the logical and physical volumes for the Geant4 simulation's world, initializes detector layers, scintillators, waveguides, and PMTs, and places everything in their designated positions according to the simulation setup.</p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the physical world volume containing all detector components. </dd></dl>
+<p>&lt; (name, halfx, halfy, halfz)</p>
 
 </div>
 </div>
@@ -223,7 +231,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">G4int</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+          <td class="paramtype">G4int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -234,6 +242,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a detector layer. </p>
+<p>Constructs a detector layer at a specified position.</p>
 <p>Creates a single layer of the detector, including placement and logical volume.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -245,13 +254,36 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A tuple containing the physical volumes of the layer components. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A tuple containing the physical volumes of the layer components.</dd></dl>
+<p>Constructs a detector layer consisting of scintillators and waveguides placed in a specified position within the logical world volume.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">posX</td><td>X-coordinate where the detector layer is positioned. </td></tr>
+    <tr><td class="paramname">posY</td><td>Y-coordinate where the detector layer is positioned. </td></tr>
+    <tr><td class="paramname">posZ</td><td>Z-coordinate where the detector layer is positioned. </td></tr>
+    <tr><td class="paramname">logicWorld</td><td>Reference to the logical volume representing the world. </td></tr>
+    <tr><td class="paramname">i</td><td>Identifier index for the detector layer.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A tuple containing pointers to the physical volumes of the scintillator and waveguide. </dd></dl>
+<p>&lt; Refractive index for the scintillator material.</p>
+<p>&lt; Fraction values for scintillation components. Set to 1.0 as default.</p>
+<p>&lt; Setting the refraction index.</p>
+<p>&lt; Setting only fast component of scintillation (not both fast and slow).</p>
+<p>&lt; Setting the scintillation yield (A true value would be 10k, this is needed for optimization).</p>
+<p>&lt; Sigma of the distribution.</p>
+<p>&lt; Setting the scintillation time for fast component.</p>
+<p>&lt; Position of the detector.</p>
+<p>&lt; (name, halfx, halfy, halfz)</p>
+<p>&lt; Position of the waveguide.</p>
+<p>&lt; (name, halfx, halfy, halfz)</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>sim/<a class="el" href="construction_8hh_source.html">construction.hh</a></li>
-<li>sim/<b>construction.cc</b></li>
+<li>sim/<a class="el" href="construction_8cc.html">construction.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
