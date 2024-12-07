@@ -2,7 +2,7 @@
 # CMEPDA Project
 Welcome to the documentation section!
 
-## $\mu$-Life Simulation
+## &mu-Life Simulation
 $\mu$-Life Simulation is a project made for the CMEPDA exam at UNIPI, in which we aim to reconstruct the $\mu$-Life experiment of the Fundamental Interactions Physics Laboratory.
 The aim of this experiment is the measurement of the mean life of the $\mu$, using plastic scintillators and PMTs.
 The simulation is made generating muons with a momentum extracted from a Gaussian distribution with mean $m =80$ MeV/c adn standard deviation $std = 20$ MeV/c, in order to only have "useful" particles.
