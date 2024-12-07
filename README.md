@@ -1,6 +1,6 @@
 [![Documentation](https://img.shields.io/badge/docs-online-blue?logo=github)](https://GuBenf.github.io/CMEPDA_project/)
 
-#CMEPDA Project
+# CMEPDA Project
 
 ## $\mu$-Life Simulation
 $\mu$-Life Simulation is a project made for the CMEPDA exam at UNIPI, in which we aim to reconstruct the $\mu$-Life experiment of the Fundamental Interactions Physics Laboratory.
