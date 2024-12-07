@@ -1,6 +1,6 @@
 var indexSectionsWithContent =
 {
-  0: "acdlmprsu",
+  0: "$acdlmprsu",
   1: "m",
   2: "as",
   3: "m",
