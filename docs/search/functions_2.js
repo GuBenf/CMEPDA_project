@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7emyactioninitialization_0',['~MyActionInitialization',['../class_my_action_initialization.html#a32cf5c9d568d175a5b255dabb88f3976',1,'MyActionInitialization']]]
+  ['detectorlayer_0',['DetectorLayer',['../class_my_detector_construction.html#ad9960d816685b83c35a2cd7e809b733a',1,'MyDetectorConstruction']]]
 ];

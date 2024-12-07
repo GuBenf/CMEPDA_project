@@ -2,8 +2,8 @@ var indexSectionsWithContent =
 {
   0: "$abcdlmprsu~",
   1: "m",
-  2: "as",
-  3: "bm~",
+  2: "acs",
+  3: "bcdm~",
   4: "cp"
 };
 
