@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['documentation_0',['Documentation',['../index.html#autotoc_md2',1,'']]]
+  ['life_20simulation_0',['&amp;mu-Life Simulation',['../md_mainpage.html#autotoc_md1',1,'']]]
 ];
