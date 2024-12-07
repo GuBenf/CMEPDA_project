@@ -8,7 +8,7 @@ The aim of this experiment is the measurement of the mean life of the $\mu$, usi
 The simulation is made generating muons with a momentum extracted from a Gaussian distribution with mean $m =80$ MeV/c adn standard deviation $std = 20$ MeV/c, in order to only have "useful" particles.
 
 ### Documentation
-Link to lsat updated version of documentation: [Link](file:///Users/Alberto/Desktop/Magistrale/Computing_methods/Progetto/CMEPDA_project/docs/html/dir_4fedf3bc7458de691f44ea68a2cf9143.html)
+Link to last updated version of documentation: [Link](https://GuBenf.github.io/CMEPDA_project/)
 
 ### Requirements
 To use this project you need to have Geant4 v.11 or superior and ROOT v.6.28 or superior installed in your machine, so be sure to check those requirements.
