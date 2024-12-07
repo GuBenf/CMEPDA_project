@@ -49,7 +49,7 @@ std::tuple<G4VPhysicalVolume *, G4VPhysicalVolume *> MyDetectorConstruction::Det
 {
   // --------------------Define the material for the scintillator--------------------
 
-  G4MaterialPropertiesTable *mptScint = new G4MaterialPropertiesTable();
+  G4MaterialPropertiesTable *mptScint;
   G4double rindex[2] = {1.587, 1.587}; ///< Refractive index for the scintillator material.
   G4double fraction[2] = {1.0, 1.0}; ///< Fraction values for scintillation components. Set to 1.0 as default.
 
