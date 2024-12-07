@@ -1,0 +1,34 @@
+\doxysection{generator.\+hh}
+\hypertarget{generator_8hh_source}{}\label{generator_8hh_source}\index{sim/generator.hh@{sim/generator.hh}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GENERATOR\_HH}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GENERATOR\_HH}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}G4VUserPrimaryGeneratorAction.hh"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}G4ParticleGun.hh"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}G4SystemOfUnits.hh"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}G4ParticleTable.hh"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}G4GeneralParticleSource.hh"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}G4AnalysisManager.hh"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}G4Run.hh"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}G4RunManager.hh"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}globals.hh"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}G4RandomTools.hh"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_my_primary_generator}{MyPrimaryGenerator}}\ :\ \textcolor{keyword}{public}\ G4VUserPrimaryGeneratorAction}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{class_my_primary_generator}{MyPrimaryGenerator}}();}
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{class_my_primary_generator}{\string~MyPrimaryGenerator}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ GeneratePrimaries(G4Event*);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ G4ParticleGun\ *fParticleGun;}
+\DoxyCodeLine{00025\ \ \ G4GeneralParticleSource\ *fParticleSource;}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
