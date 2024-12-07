@@ -1,9 +1,6 @@
 [![Documentation](https://img.shields.io/badge/docs-online-blue?logo=github)](https://GuBenf.github.io/CMEPDA_project/)
-/*!
-
-\mainpage Welcome to the documentation page!
-
 # CMEPDA Project
+\mainpage Welcome to the documentation page!
 
 ## $\mu$-Life Simulation
 $\mu$-Life Simulation is a project made for the CMEPDA exam at UNIPI, in which we aim to reconstruct the $\mu$-Life experiment of the Fundamental Interactions Physics Laboratory.
@@ -28,5 +25,3 @@ In order to use the project you need to follow some (easy) steps:
 
 ### Authors
 $\mu$-Life Simulation has been done by **[Alberto Niccolai] (https://github.com/AlbertoNiccolai)**  and **[Guglielmo Benfratello] (https://github.com/GuBenf)**.
-
-*/
