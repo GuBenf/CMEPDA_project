@@ -1,3 +1,12 @@
+/**
+ * @file action.hh
+ * @brief Declaration of the MyActionInitialization class methods.
+ * 
+ * This file contains the declaration of the `MyActionInitialization` class,
+ * which sets up user-defined actions for the Geant4 simulation. Specifically,
+ * it initializes the primary particle generator and run action.
+ */
+
 #ifndef ACTION_HH
 #define ACTION_HH
 
