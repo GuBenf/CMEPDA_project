@@ -90,6 +90,11 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">MyActionInitialization Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages the initialization of primary generator and run action.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="action_8hh_source.html">action.hh</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MyActionInitialization:</div>
 <div class="dyncontent">
@@ -99,13 +104,100 @@ Inheritance diagram for MyActionInitialization:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a143acaaac6ada5dba428ada82d136910" id="r_a143acaaac6ada5dba428ada82d136910"><td class="memItemLeft" align="right" valign="top"><a id="a143acaaac6ada5dba428ada82d136910" name="a143acaaac6ada5dba428ada82d136910"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Build</b> () const</td></tr>
+<tr class="memitem:a8f95c83b7ef2c61d27fc439a93907895" id="r_a8f95c83b7ef2c61d27fc439a93907895"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f95c83b7ef2c61d27fc439a93907895">MyActionInitialization</a> ()</td></tr>
+<tr class="memdesc:a8f95c83b7ef2c61d27fc439a93907895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a>.  <br /></td></tr>
+<tr class="separator:a8f95c83b7ef2c61d27fc439a93907895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32cf5c9d568d175a5b255dabb88f3976" id="r_a32cf5c9d568d175a5b255dabb88f3976"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32cf5c9d568d175a5b255dabb88f3976">~MyActionInitialization</a> ()</td></tr>
+<tr class="memdesc:a32cf5c9d568d175a5b255dabb88f3976"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a>.  <br /></td></tr>
+<tr class="separator:a32cf5c9d568d175a5b255dabb88f3976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a143acaaac6ada5dba428ada82d136910" id="r_a143acaaac6ada5dba428ada82d136910"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a143acaaac6ada5dba428ada82d136910">Build</a> () const</td></tr>
+<tr class="memdesc:a143acaaac6ada5dba428ada82d136910"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds the user-defined actions for the simulation.  <br /></td></tr>
 <tr class="separator:a143acaaac6ada5dba428ada82d136910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the initialization of primary generator and run action. </p>
+<p>This class inherits from <code>G4VUserActionInitialization</code> and defines the user-defined actions needed for the Geant4 simulation, including the primary generator and run action. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8f95c83b7ef2c61d27fc439a93907895" name="a8f95c83b7ef2c61d27fc439a93907895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f95c83b7ef2c61d27fc439a93907895">&#9670;&#160;</a></span>MyActionInitialization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MyActionInitialization::MyActionInitialization </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a>. </p>
+<p>Default constructor for <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a>.</p>
+<p>Initializes the <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a> object.</p>
+<p>This constructor initializes the <code><a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a></code> object but does not perform any specific setup. Actions are defined in the <code>Build</code> method. </p>
+
+</div>
+</div>
+<a id="a32cf5c9d568d175a5b255dabb88f3976" name="a32cf5c9d568d175a5b255dabb88f3976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32cf5c9d568d175a5b255dabb88f3976">&#9670;&#160;</a></span>~MyActionInitialization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MyActionInitialization::~MyActionInitialization </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor for <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a>. </p>
+<p>Cleans up resources used by the <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a> object.</p>
+<p>Cleans up resources used by the <code><a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a></code> object, if any. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a143acaaac6ada5dba428ada82d136910" name="a143acaaac6ada5dba428ada82d136910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a143acaaac6ada5dba428ada82d136910">&#9670;&#160;</a></span>Build()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyActionInitialization::Build </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Builds the user-defined actions for the simulation. </p>
+<p>Defines user actions for the simulation.</p>
+<p>This function sets the primary generator action and the run action for the simulation. It is called automatically by the Geant4 framework.</p>
+<p>This method is responsible for creating and registering user-defined actions to the Geant4 framework. It sets the following:</p><ul>
+<li>A primary generator action (<code><a class="el" href="class_my_primary_generator.html">MyPrimaryGenerator</a></code>).</li>
+<li>A run action (<code><a class="el" href="class_my_run_action.html">MyRunAction</a></code>). </li>
+</ul>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>sim/<a class="el" href="action_8hh_source.html">action.hh</a></li>
-<li>sim/<b>action.cc</b></li>
+<li>sim/<a class="el" href="action_8cc.html">action.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
