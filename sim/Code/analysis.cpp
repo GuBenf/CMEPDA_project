@@ -1,10 +1,10 @@
 /**
  * @file analysis.cpp
- * @brief Codice per analizzare i dati simulati tramite Geant@4. 
+ * @brief Code to analyse data simulated with Geant4.
  * 
- * Restituisce un plot degli intervalli di tempo fra muone rivelato e positrone di decadimento rilevato con fit esponenziale decrescente.
-Quando si chiama la funzione analysis bisogna specificare il nome del file dei dati e chi sta facendo l'analisi ("g" per Guglielmo, "a" per Alberto), così da selezionare automaticamente il path per la cartella.
-Se non si seleziona uno dei due autori noti è possibile fornire direttamente il percorso della cartella come secondo argomento.
+ * Provide a plot of the time intervals between a detected muon and its detected decay positron with a fitted exponential decay curve.
+When calling the function analysis, you must specify the name of the data file and the person performing the analysis ("g" for Guglielmo, "a" for Alberto) so the correct folder path can be selected automatically.
+If one of the two known authors is not selected, you can directly provide the folder path as the second argument.
  * 
  * @author Benfratello G., Niccolai A.
  * @date 2024.12.04
@@ -71,10 +71,8 @@ void analysis(TString file, TString name){
     int totalEntries = tree->GetEntries();
 
     vector<float> timeDeltas;
-    //cout<<totalEntries<<endl;
 
-
-    // ===============CHECK FOR THE NUMBER OF EVENTS===============
+    // ==============================
     int totalEvents = 0;
     int currentEvent, nextEvent;
     tree->GetEntry(0);
@@ -93,9 +91,6 @@ void analysis(TString file, TString name){
         currentEvent = nextEvent;
     }
 
-    
-
-    //cout<<totalEvents<<endl;
     //=============================================================
 
     TH1D *hist= new TH1D("Mu-Life simulation", "Mu-Life simulation", 100, 0., 0.);
