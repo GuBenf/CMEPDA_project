@@ -47,7 +47,7 @@ public:
    * 
    * These methods set the number of hits for specific detectors (det_1 to det_6).
    * 
-   * @param i i = 1 if detector has been hitted, else i = 0.
+   * @param i = 1 if detector has been hitted, else i = 0.
    */
   void set_det_1(G4int i){det_1 = i;}
   void set_det_2(G4int i){det_2 = i;}
@@ -75,7 +75,7 @@ public:
    * 
    * These methods the info about the detector hits (det_1 to det_6).
    * 
-   * @return 1 if detector has been hitted, else 0.
+   * @return: 1 if detector has been hitted, else 0.
    */
   G4int get_det_1(){return det_1;}
   G4int get_det_2(){return det_2;}
