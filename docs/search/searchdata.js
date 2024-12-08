@@ -2,7 +2,7 @@ var indexSectionsWithContent =
 {
   0: "$abcdglmprsu~",
   1: "m",
-  2: "acdgs",
+  2: "acdgps",
   3: "bcdgms~",
   4: "cp"
 };

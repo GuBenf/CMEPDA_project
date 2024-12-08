@@ -85,19 +85,90 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_my_physics_list-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">MyPhysicsList Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Custom physics list class for defining physics processes in a Geant4 simulation.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="physics_8hh_source.html">physics.hh</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MyPhysicsList:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_my_physics_list.png" alt=""/>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ade7b92c76a0ef3126c3a2496667ce882" id="r_ade7b92c76a0ef3126c3a2496667ce882"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade7b92c76a0ef3126c3a2496667ce882">MyPhysicsList</a> ()</td></tr>
+<tr class="memdesc:ade7b92c76a0ef3126c3a2496667ce882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <code><a class="el" href="class_my_physics_list.html" title="Custom physics list class for defining physics processes in a Geant4 simulation.">MyPhysicsList</a></code> class.  <br /></td></tr>
+<tr class="separator:ade7b92c76a0ef3126c3a2496667ce882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19a81527b16438248eaa1c129abc3592" id="r_a19a81527b16438248eaa1c129abc3592"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19a81527b16438248eaa1c129abc3592">~MyPhysicsList</a> ()</td></tr>
+<tr class="memdesc:a19a81527b16438248eaa1c129abc3592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the <code><a class="el" href="class_my_physics_list.html" title="Custom physics list class for defining physics processes in a Geant4 simulation.">MyPhysicsList</a></code> class.  <br /></td></tr>
+<tr class="separator:a19a81527b16438248eaa1c129abc3592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Custom physics list class for defining physics processes in a Geant4 simulation. </p>
+<p>The <code><a class="el" href="class_my_physics_list.html" title="Custom physics list class for defining physics processes in a Geant4 simulation.">MyPhysicsList</a></code> class is responsible for registering and managing the physical processes to be used in the simulation. It extends the modular physics list provided by Geant4 (<code>G4VModularPhysicsList</code>) and allows the inclusion of:</p><ul>
+<li><b>Electromagnetic Standard Physics</b> (<code>G4EmStandardPhysics</code>)</li>
+<li><b>Optical Processes</b> (<code>G4OpticalPhysics</code>)</li>
+<li><b>Scintillation</b> (<code>G4Scintillation</code>)</li>
+<li><b>Decay Processes</b> (<code>G4DecayPhysics</code>) </li>
+</ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ade7b92c76a0ef3126c3a2496667ce882" name="ade7b92c76a0ef3126c3a2496667ce882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade7b92c76a0ef3126c3a2496667ce882">&#9670;&#160;</a></span>MyPhysicsList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MyPhysicsList::MyPhysicsList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for the <code><a class="el" href="class_my_physics_list.html" title="Custom physics list class for defining physics processes in a Geant4 simulation.">MyPhysicsList</a></code> class. </p>
+<p>Initializes the custom physics list and sets up default physics modules.</p>
+<p>Initializes the physics list by registering the following physics modules:</p><ul>
+<li><b>Electromagnetic Standard Physics</b> (<code>G4EmStandardPhysics</code>): Handles standard electromagnetic interactions.</li>
+<li><b>Optical Physics</b> (<code>G4OpticalPhysics</code>): Manages optical photon processes, including reflection, refraction, and scintillation.</li>
+<li><b>Decay Physics</b> (<code>G4DecayPhysics</code>): Handles particle decay processes. </li>
+</ul>
+
+</div>
+</div>
+<a id="a19a81527b16438248eaa1c129abc3592" name="a19a81527b16438248eaa1c129abc3592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19a81527b16438248eaa1c129abc3592">&#9670;&#160;</a></span>~MyPhysicsList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MyPhysicsList::~MyPhysicsList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor for the <code><a class="el" href="class_my_physics_list.html" title="Custom physics list class for defining physics processes in a Geant4 simulation.">MyPhysicsList</a></code> class. </p>
+<p>Cleans up resources associated with the physics list.</p>
+<p>Cleans up resources associated with the physics list. No additional actions are required in this implementation. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>sim/<a class="el" href="physics_8hh_source.html">physics.hh</a></li>
-<li>sim/<b>physics.cc</b></li>
+<li>sim/<a class="el" href="physics_8cc.html">physics.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
