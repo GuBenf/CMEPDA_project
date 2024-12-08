@@ -134,7 +134,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor for the <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code> class. </p>
-<p>Initializes the particle gun and/or general particle source used for generating primaries. </p>
+<p>Constructor for <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code>.</p>
+<p>Initializes the particle gun and/or general particle source used for generating primaries.</p>
+<p>Initializes the particle generator and creates a new <code>G4ParticleGun</code> object configured to generate a single particle per event. </p>
 
 </div>
 </div>
@@ -154,7 +156,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor for the <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code> class. </p>
-<p>Cleans up resources allocated for particle generation tools. </p>
+<p>Destructor for <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code>.</p>
+<p>Cleans up resources allocated for particle generation tools.</p>
+<p>Cleans up memory by deleting the <code>fParticleGun</code> instance, ensuring proper resource management. </p>
 
 </div>
 </div>
@@ -183,19 +187,46 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Generates primary particles for an event. </p>
+<p>GeneratePrimaries method to create primary particles for a simulation event.</p>
 <p>This method is called by Geant4 at the beginning of each event to define the primary particles. A particle gun is used.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>Pointer to the Geant4 event object for the current event. </td></tr>
+    <tr><td class="paramname">event</td><td>Pointer to the Geant4 event object for the current event.</td></tr>
   </table>
   </dd>
 </dl>
+<p>Generates primary muons in a Geant4 simulation event. The particle distribution can be configured for different spatial, angular, and momentum distributions, including Gaussian and custom distributions.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">anEvent</td><td>A pointer to the <code>G4Event</code> object representing the current simulation event.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><b>Key functionalities include</b>:</p><ul>
+<li><b>Particle Origin (Spatial Distribution)</b>:<ul>
+<li>When <code>rand_plane_dist</code> is <code>true</code>, particles are uniformly distributed on a plane the size of the scintillator (specified by <code>planeHalfX</code> and <code>planeHalfZ</code>).</li>
+<li>If <code>rand_plane_dist</code> is <code>false</code>, particles are generated at the center of the scintillator.</li>
+</ul>
+</li>
+<li><b>Angular Distribution</b>:<ul>
+<li>A cosine-like angular distribution is implemented if <code>true_ang_dist</code> is <code>true</code>.</li>
+<li>Otherwise, particles are oriented downward by default along the z-axis.</li>
+</ul>
+</li>
+<li><b>Momentum Distribution</b>:<ul>
+<li>A Gaussian-distributed momentum can be selected with a mean (<code>mean</code>) and standard deviation (<code>sigma</code>).</li>
+<li>A custom selection algorithm generates a momentum distribution if <code>gauss_mom_dist</code> is set to <code>false</code>. </li>
+</ul>
+</li>
+</ul>
+<p>&lt; Mean of the Gaussian distribution</p>
+<p>&lt; Standard deviation of the Gaussian distribution</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>sim/<a class="el" href="generator_8hh_source.html">generator.hh</a></li>
-<li>sim/<b>generator.cc</b></li>
+<li>sim/<a class="el" href="generator_8cc.html">generator.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
