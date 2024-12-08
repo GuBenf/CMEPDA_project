@@ -59,7 +59,8 @@ using namespace std;
  * 
  * Example usage:
  * @code
- * analysis("output.root", "a");
+ * root [0] .L analysis.cpp 
+ * root [1] analysis("output.root", "a");
  * @endcode
  */
 void analysis(TString file, TString name){
