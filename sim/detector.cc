@@ -59,127 +59,46 @@ G4bool MySensitiveDetector::ProcessHits(G4Step *aStep, G4TouchableHistory *ROhis
   // Retrieve and convert the global time of the hit to microseconds.
   G4double hittime = preStepPoint->GetGlobalTime();
   G4double hitTime = hittime * 0.001; // Convert to microseconds.
+
+  // Access the analysis manager to fill the N-tuple with data.
+  G4AnalysisManager *man = G4AnalysisManager::Instance();
   
   // Determine the detector region based on the Y-coordinate of the detector's position.
   // Assign hits and timing values accordingly.  
   if(posDetector[1] <= (10.+0.5)*10 && posDetector[1] >= (10.-0.5)*10)
   {
-	    set_det_1(1);
-	    set_det_2(0);
-	    set_det_3(0);
-      	set_det_4(0);
-	    set_det_5(0);
-	    set_det_6(0);
-	    
-	    set_t_1(hitTime);
-	    set_t_2(0);
-	    set_t_3(0);
-	    set_t_4(0);
-	    set_t_5(0);
-	    set_t_6(0);
+	man->FillNtupleIColumn(0,1,1);
+	man->FillNtupleDColumn(0,7,hitTime);
   }
   else if(posDetector[1] <= (20.+0.5)*10 && posDetector[1] >= (20.-0.5)*10)
   {
-	    set_det_1(0);
-	    set_det_2(1);
-	    set_det_3(0);
-        set_det_4(0);
-	    set_det_5(0);
-	    set_det_6(0);
-
-	    set_t_1(0);
-	    set_t_2(hitTime);
-	    set_t_3(0);
-	    set_t_4(0);
-	    set_t_5(0);
-	    set_t_6(0);
+	man->FillNtupleIColumn(0,2,1);
+	man->FillNtupleDColumn(0,8,hitTime);
   }
   else if(posDetector[1] <= (30.+0.5)*10 && posDetector[1] >= (30.-0.5)*10)
   {
-      	set_det_1(0);
-	    set_det_2(0);
-	    set_det_3(1);
-      	set_det_4(0);
-	    set_det_5(0);
-	    set_det_6(0);
-	    
-	    set_t_1(0);
-	    set_t_2(0);
-	    set_t_3(hitTime);
-	    set_t_4(0);
-	    set_t_5(0);
-	    set_t_6(0);
+    man->FillNtupleIColumn(0,3,1);
+	man->FillNtupleDColumn(0,9,hitTime);
   }
   else if(posDetector[1] <= (40.+0.5)*10 && posDetector[1] >= (40.-0.5)*10)
   {
-      	set_det_1(0);
-	    set_det_2(0);
-	    set_det_3(0);
-      	set_det_4(1);
-	    set_det_5(0);
-	    set_det_6(0);
-
-	    set_t_1(0);
-	    set_t_2(0);
-	    set_t_3(0);
-	    set_t_4(hitTime);
-	    set_t_5(0);
-	    set_t_6(0);
+    man->FillNtupleIColumn(0,4,1);
+	man->FillNtupleDColumn(0,10,hitTime);
   }
   else if(posDetector[1] <= (50.+0.5)*10 && posDetector[1] >= (50.-0.5)*10)
   {
-      	set_det_1(0);
-	    set_det_2(0);
-	    set_det_3(0);
-      	set_det_4(0);
-	    set_det_5(1);
-	    set_det_6(0);
-
-	    set_t_1(0);
-	    set_t_2(0);
-	    set_t_3(0);
-	    set_t_4(0);
-	    set_t_5(hitTime);
-	    set_t_6(0);
+    man->FillNtupleIColumn(0,5,1);
+	man->FillNtupleDColumn(0,11,hitTime);
   }
   else if(posDetector[1] <= (60.+0.5)*10 && posDetector[1] >= (60.-0.5)*10)
   {
-      	set_det_1(0);
-	    set_det_2(0);
-	    set_det_3(0);
-      	set_det_4(0);
-	    set_det_5(0);
-	    set_det_6(1);
-
-	    set_t_1(0);
-	    set_t_2(0);
-	    set_t_3(0);
-	    set_t_4(0);
-	    set_t_5(0);
-	    set_t_6(hitTime);
+    man->FillNtupleIColumn(0,6,1);
+	man->FillNtupleDColumn(0,12,hitTime);
   }
 
   // Retrieve the current event ID.
   G4int evt = G4RunManager::GetRunManager()->GetCurrentRun()->GetRunID();
-  
-  // Access the analysis manager to fill the N-tuple with data.
-  G4AnalysisManager *man = G4AnalysisManager::Instance();
   man->FillNtupleIColumn(0,0,evt);
-  
-  // Record hits for all detectors.
-  man->FillNtupleIColumn(0,1,get_det_1());
-  man->FillNtupleIColumn(0,2,get_det_2());
-  man->FillNtupleIColumn(0,3,get_det_3());
-  man->FillNtupleIColumn(0,4,get_det_4());
-  man->FillNtupleIColumn(0,5,get_det_5());
-  man->FillNtupleIColumn(0,6,get_det_6());
-  
-  man->FillNtupleDColumn(0,7,get_t_1());
-  man->FillNtupleDColumn(0,8,get_t_2());
-  man->FillNtupleDColumn(0,9,get_t_3());
-  man->FillNtupleDColumn(0,10,get_t_4());
-  man->FillNtupleDColumn(0,11,get_t_5());
-  man->FillNtupleDColumn(0,12,get_t_6());
   man->FillNtupleDColumn(0,13,hitTime);
 
   // Save the row in the N-tuple.
