@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMEPDA Project: Class Members - Functions</title>
+<title>CMEPDA Project: sim/generator.hh File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -55,8 +55,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="doc-content">
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function(){ initResizable(false); });
@@ -83,26 +81,43 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4fedf3bc7458de691f44ea68a2cf9143.html">sim</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a>  </div>
+  <div class="headertitle"><div class="title">generator.hh File Reference</div></div>
+</div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all documented functions with links to the class documentation for each member:</div><ul>
-<li>Build()&#160;:&#160;<a class="el" href="class_my_action_initialization.html#a143acaaac6ada5dba428ada82d136910">MyActionInitialization</a></li>
-<li>Construct()&#160;:&#160;<a class="el" href="class_my_detector_construction.html#af59abea99479b785b14f81c3e6a9a2e8">MyDetectorConstruction</a></li>
-<li>DetectorLayer()&#160;:&#160;<a class="el" href="class_my_detector_construction.html#ad9960d816685b83c35a2cd7e809b733a">MyDetectorConstruction</a></li>
-<li>GeneratePrimaries()&#160;:&#160;<a class="el" href="class_my_primary_generator.html#ac424e3c4f4c1ba05df679d1e04b13c6c">MyPrimaryGenerator</a></li>
-<li>get_det_1()&#160;:&#160;<a class="el" href="class_my_sensitive_detector.html#aa107d407f913161ca7deff3a18527c06">MySensitiveDetector</a></li>
-<li>get_t_1()&#160;:&#160;<a class="el" href="class_my_sensitive_detector.html#a0fc2b86cd40d32d37630eee369687be6">MySensitiveDetector</a></li>
-<li>MyActionInitialization()&#160;:&#160;<a class="el" href="class_my_action_initialization.html#a8f95c83b7ef2c61d27fc439a93907895">MyActionInitialization</a></li>
-<li>MyDetectorConstruction()&#160;:&#160;<a class="el" href="class_my_detector_construction.html#a01ab5593d40d2ede193b80f0b0bfb53a">MyDetectorConstruction</a></li>
-<li>MyPrimaryGenerator()&#160;:&#160;<a class="el" href="class_my_primary_generator.html#a719b919dd38eeb0bab12357144ff5a5f">MyPrimaryGenerator</a></li>
-<li>MySensitiveDetector()&#160;:&#160;<a class="el" href="class_my_sensitive_detector.html#af23e8bb742f8aacc9c73b412328543f6">MySensitiveDetector</a></li>
-<li>set_det_1()&#160;:&#160;<a class="el" href="class_my_sensitive_detector.html#aa2795611e063b6a4ec24cbb37108c766">MySensitiveDetector</a></li>
-<li>set_t_1()&#160;:&#160;<a class="el" href="class_my_sensitive_detector.html#a5ae805ae6364cfeb6cdeb9e55d004441">MySensitiveDetector</a></li>
-<li>~MyActionInitialization()&#160;:&#160;<a class="el" href="class_my_action_initialization.html#a32cf5c9d568d175a5b255dabb88f3976">MyActionInitialization</a></li>
-<li>~MyDetectorConstruction()&#160;:&#160;<a class="el" href="class_my_detector_construction.html#a41342002c2e91fa9f4b7d92ca94c18fb">MyDetectorConstruction</a></li>
-<li>~MyPrimaryGenerator()&#160;:&#160;<a class="el" href="class_my_primary_generator.html#a2d8e84de7be72677f984fb317977d732">MyPrimaryGenerator</a></li>
-<li>~MySensitiveDetector()&#160;:&#160;<a class="el" href="class_my_sensitive_detector.html#a144f30235a096f92552720481135468c">MySensitiveDetector</a></li>
-</ul>
-</div><!-- contents -->
+
+<p>Header file for the <a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a> class.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;G4VUserPrimaryGeneratorAction.hh&quot;</code><br />
+<code>#include &quot;G4ParticleGun.hh&quot;</code><br />
+<code>#include &quot;G4SystemOfUnits.hh&quot;</code><br />
+<code>#include &quot;G4ParticleTable.hh&quot;</code><br />
+<code>#include &quot;G4AnalysisManager.hh&quot;</code><br />
+<code>#include &quot;G4Run.hh&quot;</code><br />
+<code>#include &quot;G4RunManager.hh&quot;</code><br />
+<code>#include &quot;globals.hh&quot;</code><br />
+<code>#include &quot;G4RandomTools.hh&quot;</code><br />
+</div>
+<p><a href="generator_8hh_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_primary_generator.html">MyPrimaryGenerator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom implementation of the primary generator action in Geant4.  <a href="class_my_primary_generator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Header file for the <a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a> class. </p>
+<p>Defines the <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code> class, which is responsible for generating primary particles in a Geant4 simulation. This class inherits from <code>G4VUserPrimaryGeneratorAction</code> and provides the implementation for particle generation using either a particle gun or a general particle source. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0

@@ -91,37 +91,40 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">generator.hh</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef GENERATOR_HH</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define GENERATOR_HH</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;G4VUserPrimaryGeneratorAction.hh&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;G4ParticleGun.hh&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;G4SystemOfUnits.hh&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;G4ParticleTable.hh&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;G4GeneralParticleSource.hh&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;G4AnalysisManager.hh&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;G4Run.hh&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;G4RunManager.hh&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;globals.hh&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;G4RandomTools.hh&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_my_primary_generator.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_my_primary_generator.html">MyPrimaryGenerator</a> : <span class="keyword">public</span> G4VUserPrimaryGeneratorAction</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_class" href="class_my_primary_generator.html">MyPrimaryGenerator</a>();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <a class="code hl_class" href="class_my_primary_generator.html">~MyPrimaryGenerator</a>();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> GeneratePrimaries(G4Event*);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  G4ParticleGun *fParticleGun;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  G4GeneralParticleSource *fParticleSource;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+<a href="generator_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef GENERATOR_HH</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define GENERATOR_HH</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;G4VUserPrimaryGeneratorAction.hh&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;G4ParticleGun.hh&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;G4SystemOfUnits.hh&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;G4ParticleTable.hh&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;G4AnalysisManager.hh&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;G4Run.hh&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;G4RunManager.hh&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;globals.hh&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;G4RandomTools.hh&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_my_primary_generator.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="class_my_primary_generator.html">MyPrimaryGenerator</a> : <span class="keyword">public</span> G4VUserPrimaryGeneratorAction</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_function" href="class_my_primary_generator.html#a719b919dd38eeb0bab12357144ff5a5f">MyPrimaryGenerator</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <a class="code hl_function" href="class_my_primary_generator.html#a2d8e84de7be72677f984fb317977d732">~MyPrimaryGenerator</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_my_primary_generator.html#ac424e3c4f4c1ba05df679d1e04b13c6c">GeneratePrimaries</a>(G4Event*);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  G4ParticleGun *fParticleGun; </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_my_primary_generator_html"><div class="ttname"><a href="class_my_primary_generator.html">MyPrimaryGenerator</a></div><div class="ttdef"><b>Definition</b> generator.hh:16</div></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_my_primary_generator_html"><div class="ttname"><a href="class_my_primary_generator.html">MyPrimaryGenerator</a></div><div class="ttdoc">Custom implementation of the primary generator action in Geant4.</div><div class="ttdef"><b>Definition</b> generator.hh:31</div></div>
+<div class="ttc" id="aclass_my_primary_generator_html_a2d8e84de7be72677f984fb317977d732"><div class="ttname"><a href="class_my_primary_generator.html#a2d8e84de7be72677f984fb317977d732">MyPrimaryGenerator::~MyPrimaryGenerator</a></div><div class="ttdeci">~MyPrimaryGenerator()</div><div class="ttdoc">Destructor for the MyPrimaryGenerator class.</div><div class="ttdef"><b>Definition</b> generator.cc:7</div></div>
+<div class="ttc" id="aclass_my_primary_generator_html_a719b919dd38eeb0bab12357144ff5a5f"><div class="ttname"><a href="class_my_primary_generator.html#a719b919dd38eeb0bab12357144ff5a5f">MyPrimaryGenerator::MyPrimaryGenerator</a></div><div class="ttdeci">MyPrimaryGenerator()</div><div class="ttdoc">Constructor for the MyPrimaryGenerator class.</div><div class="ttdef"><b>Definition</b> generator.cc:3</div></div>
+<div class="ttc" id="aclass_my_primary_generator_html_ac424e3c4f4c1ba05df679d1e04b13c6c"><div class="ttname"><a href="class_my_primary_generator.html#ac424e3c4f4c1ba05df679d1e04b13c6c">MyPrimaryGenerator::GeneratePrimaries</a></div><div class="ttdeci">virtual void GeneratePrimaries(G4Event *)</div><div class="ttdoc">Generates primary particles for an event.</div><div class="ttdef"><b>Definition</b> generator.cc:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

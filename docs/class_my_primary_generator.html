@@ -90,6 +90,11 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">MyPrimaryGenerator Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Custom implementation of the primary generator action in Geant4.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="generator_8hh_source.html">generator.hh</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MyPrimaryGenerator:</div>
 <div class="dyncontent">
@@ -99,10 +104,95 @@ Inheritance diagram for MyPrimaryGenerator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac424e3c4f4c1ba05df679d1e04b13c6c" id="r_ac424e3c4f4c1ba05df679d1e04b13c6c"><td class="memItemLeft" align="right" valign="top"><a id="ac424e3c4f4c1ba05df679d1e04b13c6c" name="ac424e3c4f4c1ba05df679d1e04b13c6c"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>GeneratePrimaries</b> (G4Event *)</td></tr>
+<tr class="memitem:a719b919dd38eeb0bab12357144ff5a5f" id="r_a719b919dd38eeb0bab12357144ff5a5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a719b919dd38eeb0bab12357144ff5a5f">MyPrimaryGenerator</a> ()</td></tr>
+<tr class="memdesc:a719b919dd38eeb0bab12357144ff5a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code> class.  <br /></td></tr>
+<tr class="separator:a719b919dd38eeb0bab12357144ff5a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d8e84de7be72677f984fb317977d732" id="r_a2d8e84de7be72677f984fb317977d732"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d8e84de7be72677f984fb317977d732">~MyPrimaryGenerator</a> ()</td></tr>
+<tr class="memdesc:a2d8e84de7be72677f984fb317977d732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code> class.  <br /></td></tr>
+<tr class="separator:a2d8e84de7be72677f984fb317977d732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac424e3c4f4c1ba05df679d1e04b13c6c" id="r_ac424e3c4f4c1ba05df679d1e04b13c6c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac424e3c4f4c1ba05df679d1e04b13c6c">GeneratePrimaries</a> (G4Event *)</td></tr>
+<tr class="memdesc:ac424e3c4f4c1ba05df679d1e04b13c6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates primary particles for an event.  <br /></td></tr>
 <tr class="separator:ac424e3c4f4c1ba05df679d1e04b13c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Custom implementation of the primary generator action in Geant4. </p>
+<p>The <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code> class defines how primary particles are generated in the simulation. It provides the use of a particle gun for defining particle properties such as energy, momentum, position, and type. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a719b919dd38eeb0bab12357144ff5a5f" name="a719b919dd38eeb0bab12357144ff5a5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a719b919dd38eeb0bab12357144ff5a5f">&#9670;&#160;</a></span>MyPrimaryGenerator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MyPrimaryGenerator::MyPrimaryGenerator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for the <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code> class. </p>
+<p>Initializes the particle gun and/or general particle source used for generating primaries. </p>
+
+</div>
+</div>
+<a id="a2d8e84de7be72677f984fb317977d732" name="a2d8e84de7be72677f984fb317977d732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d8e84de7be72677f984fb317977d732">&#9670;&#160;</a></span>~MyPrimaryGenerator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MyPrimaryGenerator::~MyPrimaryGenerator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor for the <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code> class. </p>
+<p>Cleans up resources allocated for particle generation tools. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac424e3c4f4c1ba05df679d1e04b13c6c" name="ac424e3c4f4c1ba05df679d1e04b13c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac424e3c4f4c1ba05df679d1e04b13c6c">&#9670;&#160;</a></span>GeneratePrimaries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyPrimaryGenerator::GeneratePrimaries </td>
+          <td>(</td>
+          <td class="paramtype">G4Event *</td>          <td class="paramname"><span class="paramname"><em>anEvent</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates primary particles for an event. </p>
+<p>This method is called by Geant4 at the beginning of each event to define the primary particles. A particle gun is used.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Pointer to the Geant4 event object for the current event. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>sim/<a class="el" href="generator_8hh_source.html">generator.hh</a></li>
 <li>sim/<b>generator.cc</b></li>
