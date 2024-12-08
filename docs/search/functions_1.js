@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['construct_0',['Construct',['../class_my_detector_construction.html#af59abea99479b785b14f81c3e6a9a2e8',1,'MyDetectorConstruction']]]
+  ['beginofrunaction_0',['BeginOfRunAction',['../class_my_run_action.html#a9dacd747212ed9d0bcd9c365e0cf6c52',1,'MyRunAction']]],
+  ['build_1',['Build',['../class_my_action_initialization.html#a143acaaac6ada5dba428ada82d136910',1,'MyActionInitialization']]]
 ];

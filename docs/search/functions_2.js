@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['detectorlayer_0',['DetectorLayer',['../class_my_detector_construction.html#ad9960d816685b83c35a2cd7e809b733a',1,'MyDetectorConstruction']]]
+  ['construct_0',['Construct',['../class_my_detector_construction.html#af59abea99479b785b14f81c3e6a9a2e8',1,'MyDetectorConstruction']]]
 ];
