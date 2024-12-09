@@ -30,8 +30,8 @@
  * It configures random number generation, initializes the simulation environment, and sets up visualization commands.
  * It also opens the output file for data logging and runs the simulation for 1000 events.
  * 
- * @param argc Argument count from the command line.
- * @param argv Argument values from the command line.
+ * @param argc Number of parameters passed.
+ * @param argv Parameters. Argv[1] = Number of runs wanted.
  * @return Integer exit status.
  */
 int main(int argc, char** argv)
