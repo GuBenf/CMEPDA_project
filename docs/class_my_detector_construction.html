@@ -140,10 +140,7 @@ Public Member Functions</h2></td></tr>
 <p>Default constructor for <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code>.</p>
 <p>Initializes the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object and its associated materials.</p>
 <p>This constructor initializes the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object but does not perform any specific setup. Actions are defined in the <code>Build</code> method. </p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>                                              {</div>
-<div class="line"><span class="lineno">   21</span>  <span class="comment">// No initialization logic needed here.</span></div>
-<div class="line"><span class="lineno">   22</span>}</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a41342002c2e91fa9f4b7d92ca94c18fb" name="a41342002c2e91fa9f4b7d92ca94c18fb"></a>
@@ -165,10 +162,7 @@ Public Member Functions</h2></td></tr>
 <p>Destructor for <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code>.</p>
 <p>Cleans up resources used by the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object.</p>
 <p>Cleans up resources used by the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object, if any. </p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>                                               {</div>
-<div class="line"><span class="lineno">   30</span>  <span class="comment">// No specific cleanup required.</span></div>
-<div class="line"><span class="lineno">   31</span>}</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -202,40 +196,7 @@ Public Member Functions</h2></td></tr>
 <p>Constructs the logical and physical volumes for the Geant4 simulation's world, initializes detector layers, scintillators, waveguides, and PMTs, and places everything in their designated positions according to the simulation setup.</p>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the physical world volume containing all detector components. </dd></dl>
 <p>&lt; (name, halfx, halfy, halfz)</p>
-<div class="fragment"><div class="line"><span class="lineno">   91</span>{</div>
-<div class="line"><span class="lineno">   92</span>  <span class="comment">//-------------------- Define the world material --------------------</span></div>
-<div class="line"><span class="lineno">   93</span>  G4Material *worldMat = nist-&gt;FindOrBuildMaterial(<span class="stringliteral">&quot;G4_AIR&quot;</span>);</div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>  G4MaterialPropertiesTable *mptAir = <span class="keyword">new</span> G4MaterialPropertiesTable();</div>
-<div class="line"><span class="lineno">   96</span>  G4double rindex_air[2] = {1.0, 1.0};</div>
-<div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>  mptAir-&gt;AddProperty(<span class="stringliteral">&quot;RINDEX&quot;</span>, energy, rindex_air, 2);</div>
-<div class="line"><span class="lineno">   99</span>  worldMat-&gt;SetMaterialPropertiesTable(mptAir);</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>  <span class="comment">//-------------------- Build the world geometry --------------------</span></div>
-<div class="line"><span class="lineno">  103</span>  G4Box *solidWorld = <span class="keyword">new</span> G4Box(<span class="stringliteral">&quot;solidWorld&quot;</span>, 1.*m, 1.*m, 1.*m); </div>
-<div class="line"><span class="lineno">  104</span>  G4LogicalVolume *logicWorld = <span class="keyword">new</span> G4LogicalVolume(solidWorld, worldMat, <span class="stringliteral">&quot;logicWorld&quot;</span>);</div>
-<div class="line"><span class="lineno">  105</span>  G4VPhysicalVolume *physWorld = <span class="keyword">new</span> G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicWorld, <span class="stringliteral">&quot;physWorld&quot;</span>, 0, <span class="keyword">false</span>, 0, <span class="keyword">true</span>); <span class="comment">//(rotation, center, logic volume, name,mother/son volume, check for overlaps)</span></div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>  <span class="comment">//-------------------- Create detector layers --------------------</span></div>
-<div class="line"><span class="lineno">  109</span>  <span class="keywordflow">for</span> (G4int i = 1; i &lt; nDetectors +1; i++){</div>
-<div class="line"><span class="lineno">  110</span>    <a class="code hl_function" href="#ad9960d816685b83c35a2cd7e809b733a">DetectorLayer</a>(0.*cm, i * 10.*cm, 0.*cm, logicWorld, i);</div>
-<div class="line"><span class="lineno">  111</span>  }</div>
-<div class="line"><span class="lineno">  112</span>  </div>
-<div class="line"><span class="lineno">  113</span>  </div>
-<div class="line"><span class="lineno">  114</span>  G4Box *solidPMT = <span class="keyword">new</span> G4Box(<span class="stringliteral">&quot;solidPMT&quot;</span>, pmt_x , pmt_y , pmt_z);</div>
-<div class="line"><span class="lineno">  115</span>  logicDetector = <span class="keyword">new</span> G4LogicalVolume(solidPMT,scint_material,<span class="stringliteral">&quot;logicDetector&quot;</span>);</div>
-<div class="line"><span class="lineno">  116</span>  <span class="keywordflow">for</span> (G4int i = 1; i &lt; nDetectors +1; i++){</div>
-<div class="line"><span class="lineno">  117</span>    G4ThreeVector pmt_pos(0.*cm, i * 10.*cm ,(det_z+2*d_z+pmt_z)); <span class="comment">//position</span></div>
-<div class="line"><span class="lineno">  118</span>    G4VPhysicalVolume *physPMT = <span class="keyword">new</span> G4PVPlacement(0,pmt_pos,logicDetector,<span class="stringliteral">&quot;physPMT&quot;</span>,logicWorld,<span class="keyword">false</span>,i,<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  119</span>  }</div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  122</span>  <span class="keywordflow">return</span> physWorld;</div>
-<div class="line"><span class="lineno">  123</span>}</div>
-<div class="ttc" id="aclass_my_detector_construction_html_ad9960d816685b83c35a2cd7e809b733a"><div class="ttname"><a href="#ad9960d816685b83c35a2cd7e809b733a">MyDetectorConstruction::DetectorLayer</a></div><div class="ttdeci">virtual std::tuple&lt; G4VPhysicalVolume *, G4VPhysicalVolume * &gt; DetectorLayer(G4double posX, G4double posY, G4double posZ, G4LogicalVolume *logicWorld, G4int index)</div><div class="ttdoc">Constructs a detector layer.</div><div class="ttdef"><b>Definition</b> construction.cc:48</div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ad9960d816685b83c35a2cd7e809b733a" name="ad9960d816685b83c35a2cd7e809b733a"></a>
@@ -317,38 +278,7 @@ Public Member Functions</h2></td></tr>
 <p>&lt; (name, halfx, halfy, halfz)</p>
 <p>&lt; Position of the waveguide.</p>
 <p>&lt; (name, halfx, halfy, halfz)</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>{</div>
-<div class="line"><span class="lineno">   50</span>  <span class="comment">// --------------------Define the material for the scintillator--------------------</span></div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>  G4MaterialPropertiesTable *mptScint = <span class="keyword">new</span> G4MaterialPropertiesTable();</div>
-<div class="line"><span class="lineno">   53</span>  G4double rindex[2] = {1.587, 1.587}; </div>
-<div class="line"><span class="lineno">   54</span>  G4double fraction[2] = {1.0, 1.0}; </div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>  mptScint-&gt;AddProperty(<span class="stringliteral">&quot;RINDEX&quot;</span>, energy, rindex, 2); </div>
-<div class="line"><span class="lineno">   57</span>  mptScint-&gt;AddProperty(<span class="stringliteral">&quot;SCINTILLATIONCOMPONENT1&quot;</span>, energy, fraction, 2); </div>
-<div class="line"><span class="lineno">   58</span>  mptScint-&gt;AddConstProperty(<span class="stringliteral">&quot;SCINTILLATIONYIELD&quot;</span>, 100./MeV); </div>
-<div class="line"><span class="lineno">   59</span>  mptScint-&gt;AddConstProperty(<span class="stringliteral">&quot;RESOLUTIONSCALE&quot;</span>, 1.); </div>
-<div class="line"><span class="lineno">   60</span>  mptScint-&gt;AddConstProperty(<span class="stringliteral">&quot;SCINTILLATIONTIMECONSTANT1&quot;</span>, 2.4 * ns); </div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>  scint_material-&gt;SetMaterialPropertiesTable(mptScint);</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>  <span class="comment">//--------------------Create the geometry of scintillators--------------------</span></div>
-<div class="line"><span class="lineno">   65</span>  G4ThreeVector det_pos(posX, posY, posZ); </div>
-<div class="line"><span class="lineno">   66</span>  G4Box *solidDetector = <span class="keyword">new</span> G4Box(<span class="stringliteral">&quot;solidDetector&quot;</span>, det_x , det_y , det_z); </div>
-<div class="line"><span class="lineno">   67</span>  G4LogicalVolume *logicalDetector = <span class="keyword">new</span> G4LogicalVolume(solidDetector, scint_material , <span class="stringliteral">&quot;logicalDetector&quot;</span>);</div>
-<div class="line"><span class="lineno">   68</span>  G4VPhysicalVolume *physDetector = <span class="keyword">new</span> G4PVPlacement(0, det_pos, logicalDetector, <span class="stringliteral">&quot;physDetector&quot;</span>, logicWorld, <span class="keyword">false</span>, i, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>  <span class="comment">//--------------------Build the wave guides--------------------</span></div>
-<div class="line"><span class="lineno">   71</span>  G4ThreeVector wg_pos(posX, posY ,(det_z+d_z)); </div>
-<div class="line"><span class="lineno">   72</span>  G4Trd *solidWaveGuide = <span class="keyword">new</span> G4Trd(<span class="stringliteral">&quot;solidWaveLine&quot;</span>, d_x1, d_x2 , d_y1, d_y2 , d_z); </div>
-<div class="line"><span class="lineno">   73</span>  G4LogicalVolume *logicWaveGuide = <span class="keyword">new</span> G4LogicalVolume(solidWaveGuide, scint_material , <span class="stringliteral">&quot;logicWaveGuide&quot;</span>);</div>
-<div class="line"><span class="lineno">   74</span>  G4VPhysicalVolume *physWaveGuide = <span class="keyword">new</span> G4PVPlacement(0, wg_pos, logicWaveGuide, <span class="stringliteral">&quot;physWaveGuide&quot;</span>, logicWorld, <span class="keyword">false</span>, i, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>  <span class="comment">//-------------------- Return a tuple containing physical volumes --------------------</span></div>
-<div class="line"><span class="lineno">   78</span>  <span class="keywordflow">return</span> std::make_tuple(physDetector, physWaveGuide);</div>
-<div class="line"><span class="lineno">   79</span>}</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
