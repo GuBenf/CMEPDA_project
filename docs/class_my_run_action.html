@@ -137,7 +137,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructor for the <code><a class="el" href="class_my_run_action.html" title="Handles run-level actions in a Geant4 simulation.">MyRunAction</a></code> class. </p>
-<p>Initializes the class and sets up any necessary configurations for run-level actions.</p>
 <p>This constructor initializes the analysis manager and sets up ntuples for storing simulation data, such as hits and particle properties, during a Geant4 run. </p>
 <p>&lt; Event identifier</p>
 <p>&lt; Hits "value" (0 or 1) by PMT1</p>
@@ -176,7 +175,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor for the <code><a class="el" href="class_my_run_action.html" title="Handles run-level actions in a Geant4 simulation.">MyRunAction</a></code> class. </p>
-<p>Cleans up resources used by the run action.</p>
 <p>This destructor performs any necessary cleanup after the simulation run. Currently, no specific cleanup is implemented. </p>
 
 </div>
@@ -206,13 +204,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Actions performed at the beginning of a simulation run. </p>
-<p>This method is called automatically at the start of each simulation run. It initializes data structures, prepares for data collection, and configures analysis tools.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">run</td><td>Pointer to the current <code>G4Run</code> object.</td></tr>
-  </table>
-  </dd>
-</dl>
 <p>This method is called automatically at the start of each simulation run. Currently, it does not perform any specific actions but can be customized as needed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -247,13 +238,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Actions performed at the end of a simulation run. </p>
-<p>This method is called automatically at the end of each simulation run. It finalizes data collection, writes results to output files, and cleans up analysis tools.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">run</td><td>Pointer to the current <code>G4Run</code> object.</td></tr>
-  </table>
-  </dd>
-</dl>
 <p>This method is called automatically at the end of each simulation run. Currently, it does not perform any specific actions but can be customized as needed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
