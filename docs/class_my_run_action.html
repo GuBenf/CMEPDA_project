@@ -120,8 +120,6 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles run-level actions in a Geant4 simulation. </p>
 <p>This class is responsible for initializing and finalizing the analysis framework, managing run-level tasks, and ensuring proper data handling during the simulation. It overrides the <code>BeginOfRunAction</code> and <code>EndOfRunAction</code> methods to implement custom behavior at the start and end of each simulation run. </p>
-
-<p class="definition">Definition at line <a class="el" href="run_8hh_source.html#l00026">26</a> of file <a class="el" href="run_8hh_source.html">run.hh</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acffdff2aae0d71d149e418896a6ddcd2" name="acffdff2aae0d71d149e418896a6ddcd2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acffdff2aae0d71d149e418896a6ddcd2">&#9670;&#160;</a></span>MyRunAction()</h2>
@@ -159,9 +157,36 @@ Public Member Functions</h2></td></tr>
 <p>&lt; Particle momentum</p>
 <p>&lt; Cosine of the particle angle</p>
 <p>&lt; Finalize the "Simulation" ntuple configuration</p>
-
-<p class="definition">Definition at line <a class="el" href="run_8cc_source.html#l00017">17</a> of file <a class="el" href="run_8cc_source.html">run.cc</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   18</span>{</div>
+<div class="line"><span class="lineno">   19</span> G4AnalysisManager *man = G4AnalysisManager::Instance();</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>  <span class="comment">// Creating the &quot;Hits&quot; ntuple</span></div>
+<div class="line"><span class="lineno">   22</span>  man-&gt;CreateNtuple(<span class="stringliteral">&quot;Hits&quot;</span>,<span class="stringliteral">&quot;Hits&quot;</span>);</div>
+<div class="line"><span class="lineno">   23</span>  man-&gt;CreateNtupleIColumn(<span class="stringliteral">&quot;fEvent&quot;</span>);  </div>
+<div class="line"><span class="lineno">   24</span>  man-&gt;CreateNtupleIColumn(<span class="stringliteral">&quot;PMT1&quot;</span>);    </div>
+<div class="line"><span class="lineno">   25</span>  man-&gt;CreateNtupleIColumn(<span class="stringliteral">&quot;PMT2&quot;</span>);    </div>
+<div class="line"><span class="lineno">   26</span>  man-&gt;CreateNtupleIColumn(<span class="stringliteral">&quot;PMT3&quot;</span>);    </div>
+<div class="line"><span class="lineno">   27</span>  man-&gt;CreateNtupleIColumn(<span class="stringliteral">&quot;PMT4&quot;</span>);    </div>
+<div class="line"><span class="lineno">   28</span>  man-&gt;CreateNtupleIColumn(<span class="stringliteral">&quot;PMT5&quot;</span>);    </div>
+<div class="line"><span class="lineno">   29</span>  man-&gt;CreateNtupleIColumn(<span class="stringliteral">&quot;PMT6&quot;</span>);    </div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>  man-&gt;CreateNtupleDColumn(<span class="stringliteral">&quot;T_1&quot;</span>);     </div>
+<div class="line"><span class="lineno">   32</span>  man-&gt;CreateNtupleDColumn(<span class="stringliteral">&quot;T_2&quot;</span>);     </div>
+<div class="line"><span class="lineno">   33</span>  man-&gt;CreateNtupleDColumn(<span class="stringliteral">&quot;T_3&quot;</span>);     </div>
+<div class="line"><span class="lineno">   34</span>  man-&gt;CreateNtupleDColumn(<span class="stringliteral">&quot;T_4&quot;</span>);     </div>
+<div class="line"><span class="lineno">   35</span>  man-&gt;CreateNtupleDColumn(<span class="stringliteral">&quot;T_5&quot;</span>);     </div>
+<div class="line"><span class="lineno">   36</span>  man-&gt;CreateNtupleDColumn(<span class="stringliteral">&quot;T_6&quot;</span>);     </div>
+<div class="line"><span class="lineno">   37</span>  man-&gt;CreateNtupleDColumn(<span class="stringliteral">&quot;Times&quot;</span>);   </div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>  man-&gt;FinishNtuple(0);   </div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>  <span class="comment">// Creating the &quot;Simulation&quot; ntuple</span></div>
+<div class="line"><span class="lineno">   42</span>  man-&gt;CreateNtuple(<span class="stringliteral">&quot;Simulation&quot;</span>, <span class="stringliteral">&quot;Simulation&quot;</span>);</div>
+<div class="line"><span class="lineno">   43</span>  man-&gt;CreateNtupleDColumn(<span class="stringliteral">&quot;Momentum&quot;</span>);  </div>
+<div class="line"><span class="lineno">   44</span>  man-&gt;CreateNtupleDColumn(<span class="stringliteral">&quot;CosTheta&quot;</span>);  </div>
+<div class="line"><span class="lineno">   45</span>  man-&gt;FinishNtuple(1);  </div>
+<div class="line"><span class="lineno">   46</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a82c981e9ea84bee9578cb7cafae7fbff" name="a82c981e9ea84bee9578cb7cafae7fbff"></a>
@@ -182,9 +207,8 @@ Public Member Functions</h2></td></tr>
 <p>Destructor for the <code><a class="el" href="class_my_run_action.html" title="Handles run-level actions in a Geant4 simulation.">MyRunAction</a></code> class. </p>
 <p>Cleans up resources used by the run action.</p>
 <p>This destructor performs any necessary cleanup after the simulation run. Currently, no specific cleanup is implemented. </p>
-
-<p class="definition">Definition at line <a class="el" href="run_8cc_source.html#l00054">54</a> of file <a class="el" href="run_8cc_source.html">run.cc</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   55</span>{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -226,9 +250,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="run_8cc_source.html#l00066">66</a> of file <a class="el" href="run_8cc_source.html">run.cc</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   67</span>{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aceeba229b0f5493ae9dc1d069ef10293" name="aceeba229b0f5493ae9dc1d069ef10293"></a>
@@ -269,14 +292,13 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="run_8cc_source.html#l00078">78</a> of file <a class="el" href="run_8cc_source.html">run.cc</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   79</span>{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>sim/<a class="el" href="run_8hh_source.html">run.hh</a></li>
-<li>sim/<a class="el" href="run_8cc_source.html">run.cc</a></li>
+<li>sim/<a class="el" href="run_8cc.html">run.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

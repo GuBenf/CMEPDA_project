@@ -117,8 +117,6 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Custom implementation of the primary generator action in Geant4. </p>
 <p>The <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code> class defines how primary particles are generated in the simulation. It provides the use of a particle gun for defining particle properties such as energy, momentum, position, and type. </p>
-
-<p class="definition">Definition at line <a class="el" href="generator_8hh_source.html#l00030">30</a> of file <a class="el" href="generator_8hh_source.html">generator.hh</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a719b919dd38eeb0bab12357144ff5a5f" name="a719b919dd38eeb0bab12357144ff5a5f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a719b919dd38eeb0bab12357144ff5a5f">&#9670;&#160;</a></span>MyPrimaryGenerator()</h2>
@@ -139,9 +137,10 @@ Public Member Functions</h2></td></tr>
 <p>Constructor for <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code>.</p>
 <p>Initializes the particle gun and/or general particle source used for generating primaries.</p>
 <p>Initializes the particle generator and creates a new <code>G4ParticleGun</code> object configured to generate a single particle per event. </p>
-
-<p class="definition">Definition at line <a class="el" href="generator_8cc_source.html#l00020">20</a> of file <a class="el" href="generator_8cc_source.html">generator.cc</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{</div>
+<div class="line"><span class="lineno">   22</span>  fParticleGun = <span class="keyword">new</span> G4ParticleGun(1);</div>
+<div class="line"><span class="lineno">   23</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2d8e84de7be72677f984fb317977d732" name="a2d8e84de7be72677f984fb317977d732"></a>
@@ -163,9 +162,10 @@ Public Member Functions</h2></td></tr>
 <p>Destructor for <code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code>.</p>
 <p>Cleans up resources allocated for particle generation tools.</p>
 <p>Cleans up memory by deleting the <code>fParticleGun</code> instance, ensuring proper resource management. </p>
-
-<p class="definition">Definition at line <a class="el" href="generator_8cc_source.html#l00029">29</a> of file <a class="el" href="generator_8cc_source.html">generator.cc</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>  <span class="keyword">delete</span> fParticleGun;</div>
+<div class="line"><span class="lineno">   32</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -227,14 +227,125 @@ Public Member Functions</h2></td></tr>
 </ul>
 <p>&lt; Mean of the Gaussian distribution</p>
 <p>&lt; Standard deviation of the Gaussian distribution</p>
-
-<p class="definition">Definition at line <a class="el" href="generator_8cc_source.html#l00056">56</a> of file <a class="el" href="generator_8cc_source.html">generator.cc</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   57</span>{</div>
+<div class="line"><span class="lineno">   58</span>  <span class="comment">// --- Particle Definition ---</span></div>
+<div class="line"><span class="lineno">   59</span>  G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();</div>
+<div class="line"><span class="lineno">   60</span>  G4String particleName = <span class="stringliteral">&quot;muon&quot;</span>;</div>
+<div class="line"><span class="lineno">   61</span>  G4ParticleDefinition *particle = particleTable-&gt;FindParticle(<span class="stringliteral">&quot;mu-&quot;</span>);</div>
+<div class="line"><span class="lineno">   62</span>  fParticleGun-&gt;SetParticleDefinition(particle);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>  <span class="comment">// --- Distribution Booleans ---</span></div>
+<div class="line"><span class="lineno">   65</span>  G4bool true_ang_dist = <span class="keyword">false</span>;   <span class="comment">// Default</span></div>
+<div class="line"><span class="lineno">   66</span>  G4bool rand_plane_dist = <span class="keyword">true</span>;  <span class="comment">// Default</span></div>
+<div class="line"><span class="lineno">   67</span>  G4bool gauss_mom_dist = <span class="keyword">true</span>;  <span class="comment">// Default</span></div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>  <span class="comment">// --- Spatial Distribution ---</span></div>
+<div class="line"><span class="lineno">   70</span>  G4ThreeVector pos;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>  <span class="keywordflow">if</span> (rand_plane_dist){</div>
+<div class="line"><span class="lineno">   73</span>    <span class="comment">// Generate a random position on a plane which has the same size as the scintillator</span></div>
+<div class="line"><span class="lineno">   74</span>    G4double randomValue1 = CLHEP::HepRandom::getTheEngine()-&gt;flat();</div>
+<div class="line"><span class="lineno">   75</span>    G4double randomValue2 = CLHEP::HepRandom::getTheEngine()-&gt;flat();</div>
+<div class="line"><span class="lineno">   76</span>    G4double planeHalfX = 20.0;</div>
+<div class="line"><span class="lineno">   77</span>    G4double planeHalfZ = 24.0;</div>
+<div class="line"><span class="lineno">   78</span>    G4double x = (2.0 * randomValue1 - 1.0) * planeHalfX; <span class="comment">// Uniform random in [-planeHalfX, planeHalfX]</span></div>
+<div class="line"><span class="lineno">   79</span>    G4double z = (2.0 * randomValue2 - 1.0) * planeHalfZ; <span class="comment">// Uniform random in [-planeHalfZ, planeHalfZ]</span></div>
+<div class="line"><span class="lineno">   80</span>    G4double y = 1.0 * m;  <span class="comment">// Plane lies at z = 1 m</span></div>
+<div class="line"><span class="lineno">   81</span>    </div>
+<div class="line"><span class="lineno">   82</span>    pos = G4ThreeVector(x, y, z);</div>
+<div class="line"><span class="lineno">   83</span>  } <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   84</span>    pos = G4ThreeVector(0., 1.*m, 0.); <span class="comment">// Vertical, upon the center of the scintillator</span></div>
+<div class="line"><span class="lineno">   85</span>  }</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>  fParticleGun-&gt;SetParticlePosition(pos);</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>  <span class="comment">// --- Angular Distribution ---</span></div>
+<div class="line"><span class="lineno">   91</span>  G4ThreeVector momDir;</div>
+<div class="line"><span class="lineno">   92</span>  G4double cosTheta = 0.;</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>  <span class="keywordflow">if</span> (true_ang_dist){</div>
+<div class="line"><span class="lineno">   95</span>    <span class="comment">// Generate a cosine-like angular distribution</span></div>
+<div class="line"><span class="lineno">   96</span>    cosTheta = -G4UniformRand();</div>
+<div class="line"><span class="lineno">   97</span>    G4double theta = std::acos(cosTheta);</div>
+<div class="line"><span class="lineno">   98</span>    G4double phi = 2. * CLHEP::pi * G4UniformRand();</div>
+<div class="line"><span class="lineno">   99</span>    G4double px = std::sin(theta) * std::cos(phi);</div>
+<div class="line"><span class="lineno">  100</span>    G4double pz = std::sin(theta) * std::sin(phi);</div>
+<div class="line"><span class="lineno">  101</span>    G4double py = std::cos(theta);</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    momDir = G4ThreeVector (px, py, pz);</div>
+<div class="line"><span class="lineno">  104</span>  } <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  105</span>    momDir = G4ThreeVector(0., -1., 0.); <span class="comment">// Perpendicular to the scintillators</span></div>
+<div class="line"><span class="lineno">  106</span>  }</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>  fParticleGun-&gt;SetParticleMomentumDirection(momDir);</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>  <span class="comment">// --- Momentum Distribution ---</span></div>
+<div class="line"><span class="lineno">  112</span>  G4double mom;</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>  <span class="keywordflow">if</span> (gauss_mom_dist){</div>
+<div class="line"><span class="lineno">  115</span>  <span class="comment">// Generate a Gaussian-distributed random number</span></div>
+<div class="line"><span class="lineno">  116</span>  G4double mean = 80.0;    </div>
+<div class="line"><span class="lineno">  117</span>  G4double sigma = 20.0;   </div>
+<div class="line"><span class="lineno">  118</span>  G4double u_mom = G4RandGauss::shoot(mean, sigma);</div>
+<div class="line"><span class="lineno">  119</span>  G4double p_mom = u_mom * MeV;</div>
+<div class="line"><span class="lineno">  120</span>  fParticleGun-&gt;SetParticleMomentum(p_mom);</div>
+<div class="line"><span class="lineno">  121</span>  mom = p_mom;</div>
+<div class="line"><span class="lineno">  122</span>  }</div>
+<div class="line"><span class="lineno">  123</span>  <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  124</span>  G4bool part = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  125</span>  G4double p_m = 0.;</div>
+<div class="line"><span class="lineno">  126</span>  G4int ind = 0;</div>
+<div class="line"><span class="lineno">  127</span>  <span class="keywordflow">while</span> (part == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  128</span>    {</div>
+<div class="line"><span class="lineno">  129</span>      ind = ind +1;</div>
+<div class="line"><span class="lineno">  130</span>      <span class="keywordflow">if</span> (ind &lt;4)</div>
+<div class="line"><span class="lineno">  131</span>    {</div>
+<div class="line"><span class="lineno">  132</span>  G4double u_mom = G4UniformRand();</div>
+<div class="line"><span class="lineno">  133</span>  G4double p_mom = u_mom * 10.*GeV;</div>
+<div class="line"><span class="lineno">  134</span>  <span class="keywordflow">if</span> (p_mom &gt; 1*GeV)</div>
+<div class="line"><span class="lineno">  135</span>    {</div>
+<div class="line"><span class="lineno">  136</span>      G4double cas = 1.*GeV/p_mom;</div>
+<div class="line"><span class="lineno">  137</span>      G4double p_sel = G4UniformRand();</div>
+<div class="line"><span class="lineno">  138</span>      <span class="keywordflow">if</span> (p_sel&lt;=cas)</div>
+<div class="line"><span class="lineno">  139</span>    {</div>
+<div class="line"><span class="lineno">  140</span>      part = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  141</span>      p_m = p_mom;</div>
+<div class="line"><span class="lineno">  142</span>    }</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p_mom&lt;=1.*GeV)</div>
+<div class="line"><span class="lineno">  145</span>    {</div>
+<div class="line"><span class="lineno">  146</span>      part = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  147</span>      p_m = p_mom;</div>
+<div class="line"><span class="lineno">  148</span>    }</div>
+<div class="line"><span class="lineno">  149</span>    }</div>
+<div class="line"><span class="lineno">  150</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  151</span>    {part=<span class="keyword">true</span>;}</div>
+<div class="line"><span class="lineno">  152</span>    }</div>
+<div class="line"><span class="lineno">  153</span>  fParticleGun-&gt;SetParticleMomentum(p_m);</div>
+<div class="line"><span class="lineno">  154</span>  mom = p_m;</div>
+<div class="line"><span class="lineno">  155</span>  }</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>  <span class="comment">// Generate the particle for the event</span></div>
+<div class="line"><span class="lineno">  158</span>  fParticleGun-&gt;GeneratePrimaryVertex(anEvent);</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>  <span class="comment">// --- Analysis Logging ---</span></div>
+<div class="line"><span class="lineno">  161</span>  G4int evtID = G4RunManager::GetRunManager()-&gt;GetCurrentRun()-&gt;GetRunID();</div>
+<div class="line"><span class="lineno">  162</span>  </div>
+<div class="line"><span class="lineno">  163</span>  G4AnalysisManager *man = G4AnalysisManager::Instance();</div>
+<div class="line"><span class="lineno">  164</span>  G4cout&lt;&lt;evtID&lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; mom &lt;&lt;G4endl;</div>
+<div class="line"><span class="lineno">  165</span>  man-&gt;FillNtupleDColumn(1,0,mom);</div>
+<div class="line"><span class="lineno">  166</span>  man-&gt;FillNtupleDColumn(1,1,cosTheta);</div>
+<div class="line"><span class="lineno">  167</span>  man-&gt;AddNtupleRow(1);</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>sim/<a class="el" href="generator_8hh_source.html">generator.hh</a></li>
-<li>sim/<a class="el" href="generator_8cc_source.html">generator.cc</a></li>
+<li>sim/<a class="el" href="generator_8cc.html">generator.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
