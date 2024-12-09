@@ -105,7 +105,7 @@ Inheritance diagram for MyActionInitialization:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f95c83b7ef2c61d27fc439a93907895" id="r_a8f95c83b7ef2c61d27fc439a93907895"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f95c83b7ef2c61d27fc439a93907895">MyActionInitialization</a> ()</td></tr>
-<tr class="memdesc:a8f95c83b7ef2c61d27fc439a93907895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a>.  <br /></td></tr>
+<tr class="memdesc:a8f95c83b7ef2c61d27fc439a93907895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a>.  <br /></td></tr>
 <tr class="separator:a8f95c83b7ef2c61d27fc439a93907895"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32cf5c9d568d175a5b255dabb88f3976" id="r_a32cf5c9d568d175a5b255dabb88f3976"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32cf5c9d568d175a5b255dabb88f3976">~MyActionInitialization</a> ()</td></tr>
 <tr class="memdesc:a32cf5c9d568d175a5b255dabb88f3976"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a>.  <br /></td></tr>
@@ -133,9 +133,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor for <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a>. </p>
-<p>Default constructor for <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a>.</p>
-<p>Initializes the <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a> object.</p>
+<p>Default constructor for <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a>. </p>
 <p>This constructor initializes the <code><a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a></code> object but does not perform any specific setup. Actions are defined in the <code>Build</code> method. </p>
 
 </div>
@@ -156,7 +154,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destructor for <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a>. </p>
-<p>Cleans up resources used by the <a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a> object.</p>
 <p>Cleans up resources used by the <code><a class="el" href="class_my_action_initialization.html" title="Manages the initialization of primary generator and run action.">MyActionInitialization</a></code> object, if any. </p>
 
 </div>
@@ -186,8 +183,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Builds the user-defined actions for the simulation. </p>
-<p>Defines user actions for the simulation.</p>
-<p>This function sets the primary generator action and the run action for the simulation. It is called automatically by the Geant4 framework.</p>
 <p>This method is responsible for creating and registering user-defined actions to the Geant4 framework. It sets the following:</p><ul>
 <li>A primary generator action (<code><a class="el" href="class_my_primary_generator.html" title="Custom implementation of the primary generator action in Geant4.">MyPrimaryGenerator</a></code>).</li>
 <li>A run action (<code><a class="el" href="class_my_run_action.html" title="Handles run-level actions in a Geant4 simulation.">MyRunAction</a></code>). </li>
