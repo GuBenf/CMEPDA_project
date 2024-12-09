@@ -120,6 +120,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the detector geometry, materials, and sensitive detectors. </p>
 <p>The <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> class inherits from <code>G4VUserDetectorConstruction</code> and is used to define and build the detector setup for the simulation. This includes defining the materials, constructing the physical volumes, and assigning sensitive detectors and fields. </p>
+
+<p class="definition">Definition at line <a class="el" href="construction_8hh_source.html#l00038">38</a> of file <a class="el" href="construction_8hh_source.html">construction.hh</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a01ab5593d40d2ede193b80f0b0bfb53a" name="a01ab5593d40d2ede193b80f0b0bfb53a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a01ab5593d40d2ede193b80f0b0bfb53a">&#9670;&#160;</a></span>MyDetectorConstruction()</h2>
@@ -138,6 +140,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Default constructor for <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code>. </p>
 <p>This constructor initializes the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object but does not perform any specific setup. Actions are defined in the <code>Build</code> method. </p>
+
+<p class="definition">Definition at line <a class="el" href="construction_8cc_source.html#l00020">20</a> of file <a class="el" href="construction_8cc_source.html">construction.cc</a>.</p>
 
 </div>
 </div>
@@ -158,6 +162,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Destructor for <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code>. </p>
 <p>Cleans up resources used by the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object, if any. </p>
+
+<p class="definition">Definition at line <a class="el" href="construction_8cc_source.html#l00029">29</a> of file <a class="el" href="construction_8cc_source.html">construction.cc</a>.</p>
 
 </div>
 </div>
@@ -188,6 +194,8 @@ Public Member Functions</h2></td></tr>
 <p>Constructs the main detector geometry and places it within the world volume. </p>
 <p>Constructs the logical and physical volumes for the Geant4 simulation's world, initializes detector layers, scintillators, waveguides, and PMTs, and places everything in their designated positions according to the simulation setup.</p>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the physical world volume containing all detector components. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="construction_8cc_source.html#l00090">90</a> of file <a class="el" href="construction_8cc_source.html">construction.cc</a>.</p>
 
 </div>
 </div>
@@ -247,11 +255,13 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A tuple containing pointers to the physical volumes of the scintillator and waveguide. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="construction_8cc_source.html#l00048">48</a> of file <a class="el" href="construction_8cc_source.html">construction.cc</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>sim/<a class="el" href="construction_8hh_source.html">construction.hh</a></li>
-<li>sim/<a class="el" href="construction_8cc.html">construction.cc</a></li>
+<li>sim/<a class="el" href="construction_8cc_source.html">construction.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

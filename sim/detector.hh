@@ -28,33 +28,11 @@
 class MySensitiveDetector : public G4VSensitiveDetector
 {
 public:
-/**
-   * @brief Constructor for the `MySensitiveDetector` class.
-   * 
-   * Initializes the sensitive detector with the given name.
-   * 
-   * @param name The name of the sensitive detector.
-   */
   MySensitiveDetector(G4String name);
-
-  /**
-   * @brief Destructor for the `MySensitiveDetector` class.
-   */
   ~MySensitiveDetector();
 
 
 private:
-  /**
-   * @brief Processes hits in the sensitive detector.
-   * 
-   * This method is called when a hit is registered in the sensitive detector.
-   * It processes the `G4Step` and records relevant information.
-   * 
-   * @param step A pointer to the step that triggered the hit.
-   * @param history A pointer to the touchable history of the hit.
-   * 
-   * @return `true` if the hit was successfully processed.
-   */
   virtual G4bool ProcessHits(G4Step *step,G4TouchableHistory *history);
 };
 

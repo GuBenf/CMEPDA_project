@@ -31,18 +31,7 @@
 class MyPhysicsList : public G4VModularPhysicsList
 {
 public:
-/**
-   * @brief Constructor for the `MyPhysicsList` class.
-   *
-   * Initializes the custom physics list and sets up default physics modules.
-   */
   MyPhysicsList();
-
-  /**
-   * @brief Destructor for the `MyPhysicsList` class.
-   * 
-   * Cleans up resources associated with the physics list.
-   */
   ~MyPhysicsList();
 };
 

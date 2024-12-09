@@ -50,26 +50,26 @@ std::tuple<G4VPhysicalVolume *, G4VPhysicalVolume *> MyDetectorConstruction::Det
   // --------------------Define the material for the scintillator--------------------
 
   G4MaterialPropertiesTable *mptScint = new G4MaterialPropertiesTable();
-  G4double rindex[2] = {1.587, 1.587}; ///< Refractive index for the scintillator material.
-  G4double fraction[2] = {1.0, 1.0}; ///< Fraction values for scintillation components. Set to 1.0 as default.
+  G4double rindex[2] = {1.587, 1.587}; // Refractive index for the scintillator material.
+  G4double fraction[2] = {1.0, 1.0}; // Fraction values for scintillation components. Set to 1.0 as default.
 
-  mptScint->AddProperty("RINDEX", energy, rindex, 2); ///< Setting the refraction index.
-  mptScint->AddProperty("SCINTILLATIONCOMPONENT1", energy, fraction, 2); ///< Setting only fast component of scintillation (not both fast and slow).
-  mptScint->AddConstProperty("SCINTILLATIONYIELD", 100./MeV); ///< Setting the scintillation yield (A true value would be 10k, this is needed for optimization).
-  mptScint->AddConstProperty("RESOLUTIONSCALE", 1.); ///< Sigma of the distribution.
-  mptScint->AddConstProperty("SCINTILLATIONTIMECONSTANT1", 2.4 * ns); ///< Setting the scintillation time for fast component.
+  mptScint->AddProperty("RINDEX", energy, rindex, 2); // Setting the refraction index.
+  mptScint->AddProperty("SCINTILLATIONCOMPONENT1", energy, fraction, 2); // Setting only fast component of scintillation (not both fast and slow).
+  mptScint->AddConstProperty("SCINTILLATIONYIELD", 100./MeV); // Setting the scintillation yield (A true value would be 10k, this is needed for optimization).
+  mptScint->AddConstProperty("RESOLUTIONSCALE", 1.); // Sigma of the distribution.
+  mptScint->AddConstProperty("SCINTILLATIONTIMECONSTANT1", 2.4 * ns); // Setting the scintillation time for fast component.
 
   scint_material->SetMaterialPropertiesTable(mptScint);
 
   //--------------------Create the geometry of scintillators--------------------
-  G4ThreeVector det_pos(posX, posY, posZ); ///< Position of the detector.
-  G4Box *solidDetector = new G4Box("solidDetector", det_x , det_y , det_z); ///< (name, halfx, halfy, halfz)
+  G4ThreeVector det_pos(posX, posY, posZ); // Position of the detector.
+  G4Box *solidDetector = new G4Box("solidDetector", det_x , det_y , det_z); // (name, halfx, halfy, halfz)
   G4LogicalVolume *logicalDetector = new G4LogicalVolume(solidDetector, scint_material , "logicalDetector");
   G4VPhysicalVolume *physDetector = new G4PVPlacement(0, det_pos, logicalDetector, "physDetector", logicWorld, false, i, true);
 
   //--------------------Build the wave guides--------------------
-  G4ThreeVector wg_pos(posX, posY ,(det_z+d_z)); ///< Position of the waveguide.
-  G4Trd *solidWaveGuide = new G4Trd("solidWaveLine", d_x1, d_x2 , d_y1, d_y2 , d_z); ///< (name, halfx, halfy, halfz)
+  G4ThreeVector wg_pos(posX, posY ,(det_z+d_z)); // Position of the waveguide.
+  G4Trd *solidWaveGuide = new G4Trd("solidWaveLine", d_x1, d_x2 , d_y1, d_y2 , d_z); // (name, halfx, halfy, halfz)
   G4LogicalVolume *logicWaveGuide = new G4LogicalVolume(solidWaveGuide, scint_material , "logicWaveGuide");
   G4VPhysicalVolume *physWaveGuide = new G4PVPlacement(0, wg_pos, logicWaveGuide, "physWaveGuide", logicWorld, false, i, true);
 
@@ -100,7 +100,7 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
 
 
   //-------------------- Build the world geometry --------------------
-  G4Box *solidWorld = new G4Box("solidWorld", 1.*m, 1.*m, 1.*m); ///< (name, halfx, halfy, halfz)
+  G4Box *solidWorld = new G4Box("solidWorld", 1.*m, 1.*m, 1.*m); // (name, halfx, halfy, halfz)
   G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld");
   G4VPhysicalVolume *physWorld = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicWorld, "physWorld", 0, false, 0, true); //(rotation, center, logic volume, name,mother/son volume, check for overlaps)
 

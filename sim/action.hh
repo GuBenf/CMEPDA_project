@@ -27,25 +27,11 @@
 class MyActionInitialization : public G4VUserActionInitialization
 {
 public:
-  /**
-   * @brief Constructor for MyActionInitialization.
-   * 
-   * Initializes the MyActionInitialization object.
-   */
   MyActionInitialization();
-
-  /**
-   * @brief Destructor for MyActionInitialization.
-   * 
-   * Cleans up resources used by the MyActionInitialization object.
-   */
   ~MyActionInitialization();
 
   /**
    * @brief Builds the user-defined actions for the simulation.
-   * 
-   * This function sets the primary generator action and the run action 
-   * for the simulation. It is called automatically by the Geant4 framework.
    */
   virtual void Build() const;
 };

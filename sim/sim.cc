@@ -28,7 +28,7 @@
  * 
  * This function initializes the Geant4 framework, sets up the user interface, and begins the simulation. 
  * It configures random number generation, initializes the simulation environment, and sets up visualization commands.
- * It also opens the output file for data logging and runs the simulation for 100,000 events.
+ * It also opens the output file for data logging and runs the simulation for 1000 events.
  * 
  * @param argc Argument count from the command line.
  * @param argv Argument values from the command line.

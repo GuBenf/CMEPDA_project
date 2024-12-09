@@ -30,28 +30,8 @@
 class MyPrimaryGenerator : public G4VUserPrimaryGeneratorAction
 {
 public:
-  /**
-   * @brief Constructor for the `MyPrimaryGenerator` class.
-   * 
-   * Initializes the particle gun and/or general particle source used for generating primaries.
-   */
   MyPrimaryGenerator();
-
-  /**
-   * @brief Destructor for the `MyPrimaryGenerator` class.
-   * 
-   * Cleans up resources allocated for particle generation tools.
-   */
   ~MyPrimaryGenerator();
-
-  /**
-   * @brief Generates primary particles for an event.
-   * 
-   * This method is called by Geant4 at the beginning of each event to define the primary particles.
-   * A particle gun is used.
-   * 
-   * @param event Pointer to the Geant4 event object for the current event.
-   */
   virtual void GeneratePrimaries(G4Event*);
 
 private:

@@ -31,8 +31,6 @@ MyActionInitialization::~MyActionInitialization()
 }
 
 /**
- * @brief Defines user actions for the simulation.
- * 
  * This method is responsible for creating and registering user-defined actions
  * to the Geant4 framework. It sets the following:
  * - A primary generator action (`MyPrimaryGenerator`).
