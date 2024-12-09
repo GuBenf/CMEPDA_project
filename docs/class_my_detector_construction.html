@@ -105,16 +105,16 @@ Inheritance diagram for MyDetectorConstruction:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a01ab5593d40d2ede193b80f0b0bfb53a" id="r_a01ab5593d40d2ede193b80f0b0bfb53a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01ab5593d40d2ede193b80f0b0bfb53a">MyDetectorConstruction</a> ()</td></tr>
-<tr class="memdesc:a01ab5593d40d2ede193b80f0b0bfb53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a>.  <br /></td></tr>
+<tr class="memdesc:a01ab5593d40d2ede193b80f0b0bfb53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code>.  <br /></td></tr>
 <tr class="separator:a01ab5593d40d2ede193b80f0b0bfb53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41342002c2e91fa9f4b7d92ca94c18fb" id="r_a41342002c2e91fa9f4b7d92ca94c18fb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41342002c2e91fa9f4b7d92ca94c18fb">~MyDetectorConstruction</a> ()</td></tr>
-<tr class="memdesc:a41342002c2e91fa9f4b7d92ca94c18fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a>.  <br /></td></tr>
+<tr class="memdesc:a41342002c2e91fa9f4b7d92ca94c18fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code>.  <br /></td></tr>
 <tr class="separator:a41342002c2e91fa9f4b7d92ca94c18fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af59abea99479b785b14f81c3e6a9a2e8" id="r_af59abea99479b785b14f81c3e6a9a2e8"><td class="memItemLeft" align="right" valign="top">virtual G4VPhysicalVolume *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af59abea99479b785b14f81c3e6a9a2e8">Construct</a> ()</td></tr>
-<tr class="memdesc:af59abea99479b785b14f81c3e6a9a2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the detector geometry and materials.  <br /></td></tr>
+<tr class="memdesc:af59abea99479b785b14f81c3e6a9a2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the main detector geometry and places it within the world volume.  <br /></td></tr>
 <tr class="separator:af59abea99479b785b14f81c3e6a9a2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9960d816685b83c35a2cd7e809b733a" id="r_ad9960d816685b83c35a2cd7e809b733a"><td class="memItemLeft" align="right" valign="top">virtual std::tuple&lt; G4VPhysicalVolume *, G4VPhysicalVolume * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9960d816685b83c35a2cd7e809b733a">DetectorLayer</a> (G4double posX, G4double posY, G4double posZ, G4LogicalVolume *logicWorld, G4int index)</td></tr>
-<tr class="memdesc:ad9960d816685b83c35a2cd7e809b733a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a detector layer.  <br /></td></tr>
+<tr class="memdesc:ad9960d816685b83c35a2cd7e809b733a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a detector layer at a specified position.  <br /></td></tr>
 <tr class="separator:ad9960d816685b83c35a2cd7e809b733a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -136,9 +136,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor for <a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a>. </p>
-<p>Default constructor for <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code>.</p>
-<p>Initializes the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object and its associated materials.</p>
+<p>Default constructor for <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code>. </p>
 <p>This constructor initializes the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object but does not perform any specific setup. Actions are defined in the <code>Build</code> method. </p>
 
 </div>
@@ -158,9 +156,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Destructor for <a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a>. </p>
-<p>Destructor for <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code>.</p>
-<p>Cleans up resources used by the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object.</p>
+<p>Destructor for <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code>. </p>
 <p>Cleans up resources used by the <code><a class="el" href="class_my_detector_construction.html" title="Defines the detector geometry, materials, and sensitive detectors.">MyDetectorConstruction</a></code> object, if any. </p>
 
 </div>
@@ -189,13 +185,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs the detector geometry and materials. </p>
-<p>Constructs the main detector geometry and places it within the world volume.</p>
-<p>Defines the physical and logical volumes, placements, and materials for the detector components. Called automatically by the Geant4 framework.</p>
-<dl class="section return"><dt>Returns</dt><dd>The world physical volume of the detector geometry.</dd></dl>
+<p>Constructs the main detector geometry and places it within the world volume. </p>
 <p>Constructs the logical and physical volumes for the Geant4 simulation's world, initializes detector layers, scintillators, waveguides, and PMTs, and places everything in their designated positions according to the simulation setup.</p>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the physical world volume containing all detector components. </dd></dl>
-<p>&lt; (name, halfx, halfy, halfz)</p>
 
 </div>
 </div>
@@ -241,20 +233,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a detector layer. </p>
-<p>Constructs a detector layer at a specified position.</p>
-<p>Creates a single layer of the detector, including placement and logical volume.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">posX</td><td>X-position of the layer center. </td></tr>
-    <tr><td class="paramname">posY</td><td>Y-position of the layer center. </td></tr>
-    <tr><td class="paramname">posZ</td><td>Z-position of the layer center. </td></tr>
-    <tr><td class="paramname">logicWorld</td><td>The logical volume of the world to place the layer in. </td></tr>
-    <tr><td class="paramname">index</td><td>Identifier index for the detector layer.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A tuple containing the physical volumes of the layer components.</dd></dl>
+<p>Constructs a detector layer at a specified position. </p>
 <p>Constructs a detector layer consisting of scintillators and waveguides placed in a specified position within the logical world volume.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -267,17 +246,6 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A tuple containing pointers to the physical volumes of the scintillator and waveguide. </dd></dl>
-<p>&lt; Refractive index for the scintillator material.</p>
-<p>&lt; Fraction values for scintillation components. Set to 1.0 as default.</p>
-<p>&lt; Setting the refraction index.</p>
-<p>&lt; Setting only fast component of scintillation (not both fast and slow).</p>
-<p>&lt; Setting the scintillation yield (A true value would be 10k, this is needed for optimization).</p>
-<p>&lt; Sigma of the distribution.</p>
-<p>&lt; Setting the scintillation time for fast component.</p>
-<p>&lt; Position of the detector.</p>
-<p>&lt; (name, halfx, halfy, halfz)</p>
-<p>&lt; Position of the waveguide.</p>
-<p>&lt; (name, halfx, halfy, halfz)</p>
 
 </div>
 </div>
